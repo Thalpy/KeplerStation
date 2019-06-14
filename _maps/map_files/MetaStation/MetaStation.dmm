@@ -23929,20 +23929,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/locker)
-"aUR" = (
-/obj/machinery/vending/kink,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/crew_quarters/locker)
 "aUS" = (
 /obj/machinery/vending/clothing,
 /obj/effect/turf_decal/tile/neutral{
@@ -63891,10 +63877,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
-"cto" = (
-/obj/machinery/vending/kink,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "ctq" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -101611,7 +101593,7 @@ ckP
 cmi
 dvt
 csf
-cto
+bXE
 dux
 cvj
 cwh
@@ -119036,7 +119018,7 @@ aOw
 aQX
 aOu
 aTt
-aUR
+aUQ
 aUM
 aYe
 dnh

@@ -54256,7 +54256,6 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/kitchen)
 "gcj" = (
-/obj/machinery/vending/kink,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -57291,10 +57290,6 @@
 /obj/item/stack/spacecash/c10,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/department/crew_quarters/dorms)
-"noC" = (
-/obj/machinery/vending/kink,
-/turf/open/floor/wood,
-/area/maintenance/department/crew_quarters/dorms)
 "noM" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -59737,10 +59732,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/chapel/office)
-"tap" = (
-/obj/structure/reagent_dispensers/keg/aphro,
-/turf/open/floor/wood,
-/area/maintenance/department/crew_quarters/dorms)
 "taA" = (
 /obj/structure/chair/office/light,
 /turf/open/floor/plasteel/dark,
@@ -98997,7 +98988,7 @@ cBo
 alQ
 alb
 cBw
-noC
+alb
 aiS
 aiS
 aiS
@@ -99254,7 +99245,7 @@ ajt
 alQ
 mnG
 alb
-tap
+alb
 aiS
 anY
 apt
