@@ -23,8 +23,7 @@
 		"whack",
 		"beat",
 		"tackle",
-		"destroy",
-		"vore"
+		"destroy"
     ],
 
     "verbs_touch": [
@@ -36,8 +35,7 @@
         "rip",
         "slap",
         "grab",
-		"choke",
-		"vore"
+		"choke"
     ],
 	
     "verbs_move": [

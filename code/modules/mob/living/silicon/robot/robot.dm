@@ -233,8 +233,6 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		modulelist["Security"] = /obj/item/robot_module/security
 
-	modulelist += get_cit_modules() //Citadel change - adds Citadel's borg modules.
-
 	var/input_module = input("Please, select a module!", "Robot", null, null) as null|anything in modulelist
 	if(!input_module || module.type != /obj/item/robot_module)
 		return
@@ -639,17 +637,6 @@
 		add_overlay("laser")//Is this even used??? - Yes borg/inventory.dm
 	if(disabler)
 		add_overlay("disabler")//ditto
-
-	if(sleeper_g && module.sleeper_overlay)
-		add_overlay("[module.sleeper_overlay]_g[sleeper_nv ? "_nv" : ""]")
-	if(sleeper_r && module.sleeper_overlay)
-		add_overlay("[module.sleeper_overlay]_r[sleeper_nv ? "_nv" : ""]")
-	if(module.dogborg == TRUE)
-		if(resting)
-			cut_overlays()
-			icon_state = "[module.cyborg_base_icon]-rest"
-		else
-			icon_state = "[module.cyborg_base_icon]"
 
 	if(stat == DEAD && module.has_snowflake_deadsprite)
 		icon_state = "[module.cyborg_base_icon]-wreck"

@@ -570,13 +570,6 @@
 			L.SpinAnimation(speed = 10, loops = 5)
 
 	//CITADEL CHANGES
-	//ORGASM
-	else if((findtext(message, orgasm_words)))
-		cooldown = COOLDOWN_MEME
-		for(var/V in listeners)
-			var/mob/living/carbon/human/H = V
-			if(H.canbearoused && H.has_dna()) // probably a redundant check but for good measure
-				H.mob_climax(forced_climax=TRUE)
 
 	//DAB
 	else if((findtext(message, dab_words)))

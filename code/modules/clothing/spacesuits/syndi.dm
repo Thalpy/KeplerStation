@@ -109,7 +109,6 @@
 	name = "green space suit"
 	icon_state = "syndicate-black-med"
 	item_state = "syndicate-black"
-	tauric = TRUE		//Citadel Add for tauric hardsuits
 
 
 //Black-orange syndicate space suit

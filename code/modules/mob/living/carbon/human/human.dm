@@ -41,7 +41,6 @@
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
-	QDEL_NULL_LIST(vore_organs) // CITADEL EDIT belly stuff
 	return ..()
 
 
@@ -624,7 +623,6 @@
 	underwear = "Nude"
 	update_body()
 	update_hair()
-	update_genitals()
 
 /mob/living/carbon/human/singularity_pull(S, current_size)
 	..()

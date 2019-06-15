@@ -294,19 +294,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
-//CITADEL EDIT
-	if(NOAROUSAL in species_traits)
-		C.canbearoused = FALSE
-	else
-		if(C.client)
-			C.canbearoused = C.client.prefs.arousable
-	if(ishuman(C))
-		var/mob/living/carbon/human/H = C
-		if(NOGENITALS in H.dna.species.species_traits)
-			H.give_genitals(TRUE) //call the clean up proc to delete anything on the mob then return.
-
-// EDIT ENDS
-
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	if(C.dna.species.exotic_bloodtype)
 		C.dna.blood_type = random_blood_type()
@@ -515,50 +502,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
-	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER, BODY_TAUR_LAYER)
+	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
 
 	H.remove_overlay(BODY_BEHIND_LAYER)
 	H.remove_overlay(BODY_ADJ_LAYER)
 	H.remove_overlay(BODY_FRONT_LAYER)
-	//CITADEL EDIT - Do not forget to add this to relevent_layers list just above too!
-	H.remove_overlay(BODY_TAUR_LAYER)
-	//END EDIT
 
 	if(!mutant_bodyparts)
 		return
 
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
 
-	if("tail_lizard" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
-			bodyparts_to_add -= "tail_lizard"
-
 	if("waggingtail_lizard" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
+		if ("tail_lizard" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingtail_lizard"
-		else if ("tail_lizard" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingtail_lizard"
-
-	if("tail_human" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
-			bodyparts_to_add -= "tail_human"
-
 
 	if("waggingtail_human" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
+		if ("tail_human" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingtail_human"
-		else if ("tail_human" in mutant_bodyparts)
-			bodyparts_to_add -= "waggingtail_human"
-
-	if("spines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "spines"
 
 	if("waggingspines" in mutant_bodyparts)
-		if(!H.dna.features["spines"] || H.dna.features["spines"] == "None" || H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
-			bodyparts_to_add -= "waggingspines"
-		else if ("tail" in mutant_bodyparts)
+		if ("tail" in mutant_bodyparts)
 			bodyparts_to_add -= "waggingspines"
 
 	if("snout" in mutant_bodyparts) //Take a closer look at that snout!
@@ -601,14 +566,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			bodyparts_to_add -= "xenotail"
 
 	//Other Races
-	if("mam_tail" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
-			bodyparts_to_add -= "mam_tail"
-
 	if("mam_waggingtail" in mutant_bodyparts)
-		if(H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR) || (!H.dna.features["taur"] == "None"))
-			bodyparts_to_add -= "mam_waggingtail"
-		else if ("mam_tail" in mutant_bodyparts)
+		if ("mam_tail" in mutant_bodyparts)
 			bodyparts_to_add -= "mam_waggingtail"
 
 	if("mam_ears" in mutant_bodyparts)
@@ -618,10 +577,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if("mam_snouts" in mutant_bodyparts) //Take a closer look at that snout!
 		if((H.wear_mask && (H.wear_mask.flags_inv & HIDESNOUT)) || (H.head && (H.head.flags_inv & HIDESNOUT)) || !HD || HD.status == BODYPART_ROBOTIC)
 			bodyparts_to_add -= "mam_snouts"
-
-	if("taur" in mutant_bodyparts)
-		if(!H.dna.features["taur"] || H.dna.features["taur"] == "None" || (H.wear_suit && (H.wear_suit.flags_inv & HIDETAUR)))
-			bodyparts_to_add -= "taur"
 
 //END EDIT
 
@@ -710,8 +665,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.mam_ears_list[H.dna.features["mam_ears"]]
 				if("mam_snouts")
 					S = GLOB.mam_snouts_list[H.dna.features["mam_snouts"]]
-				if("taur")
-					S = GLOB.taur_list[H.dna.features["taur"]]
 				if("xenodorsal")
 					S = GLOB.xeno_dorsal_list[H.dna.features["xenodorsal"]]
 				if("xenohead")
@@ -896,8 +849,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_overlay(BODY_BEHIND_LAYER)
 	H.apply_overlay(BODY_ADJ_LAYER)
 	H.apply_overlay(BODY_FRONT_LAYER)
-	H.apply_overlay(BODY_TAUR_LAYER) // CITADEL EDIT
-
 
 //This exists so sprite accessories can still be per-layer without having to include that layer's
 //number in their sprite name, which causes issues when those numbers change.
@@ -909,10 +860,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return "ADJ"
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
-	//CITADEL EDIT
-		if(BODY_TAUR_LAYER)
-			return "TAUR"
-	//END EDIT
 
 
 /datum/species/proc/spec_life(mob/living/carbon/human/H)
@@ -1456,16 +1403,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			target.forcesay(GLOB.hit_appends)
 
 /datum/species/proc/disarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
-	// CITADEL EDIT slap mouthy gits and booty
+	// CIT EDIT - Zone checking
 	var/aim_for_mouth = user.zone_selected == "mouth"
 	var/target_on_help = target.a_intent == INTENT_HELP
 	var/target_aiming_for_mouth = target.zone_selected == "mouth"
 	var/target_restrained = target.restrained()
-	var/same_dir = (target.dir & user.dir)
-	var/aim_for_groin  = user.zone_selected == "groin"
-	var/target_aiming_for_groin = target.zone_selected == "groin"
-
-	if(target.check_block()) //END EDIT
+	// End edit
+	if(target.check_block())
 		target.visible_message("<span class='warning'>[target] blocks [user]'s disarm attempt!</span>")
 		return 0
 	else if(user.getStaminaLoss() >= STAMINA_SOFTCRIT)
@@ -1485,35 +1429,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		user.do_attack_animation(target, ATTACK_EFFECT_FACE_SLAP)
 		user.adjustStaminaLossBuffered(3)
 		return FALSE
-	else if(aim_for_groin && (target == user || target.lying || same_dir) && (target_on_help || target_restrained || target_aiming_for_groin))
-		user.do_attack_animation(target, ATTACK_EFFECT_ASS_SLAP)
-		user.adjustStaminaLossBuffered(3)
-		if(HAS_TRAIT(target, TRAIT_ASSBLASTUSA))
-			var/hit_zone = (user.held_index_to_dir(user.active_hand_index) == "l" ? "l_":"r_") + "arm"
-			user.adjustStaminaLoss(20, affected_zone = hit_zone)
-			user.visible_message(\
-				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
-				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
-				"You hear a slap."
-			)
-			playsound(target.loc, 'sound/weapons/tap.ogg', 50, 1, -1)
-			user.emote("scream")
-			return FALSE
-
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
-		user.visible_message(\
-			"<span class='danger'>\The [user] slaps \the [target]'s ass!</span>",\
-			"<span class='notice'>You slap [user == target ? "your" : "\the [target]'s"] ass!</span>",\
-			"You hear a slap."
-		)
-		if (target.canbearoused)
-			target.adjustArousalLoss(5)
-		if (target.getArousalLoss() >= 100 && ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna())
-			target.mob_climax(forced_climax=TRUE)
-		if (!HAS_TRAIT(target, TRAIT_NYMPHO))
-			stop_wagging_tail(target)
-
-		return FALSE
 	else if(attacker_style && attacker_style.disarm_act(user,target))
 		return 1
 	else
@@ -1523,7 +1438,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		if(target.w_uniform)
 			target.w_uniform.add_fingerprint(user)
-		//var/randomized_zone = ran_zone(user.zone_selected) CIT CHANGE - comments out to prevent compiling errors
 		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
 		if(target.pulling == user)
 			target.visible_message("<span class='warning'>[user] wrestles out of [target]'s grip!</span>")
@@ -1743,11 +1657,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(BP)
 				if(damage > 0 ? BP.receive_damage(damage * hit_percent * brutemod * H.physiology.brute_mod, 0) : BP.heal_damage(abs(damage * hit_percent * brutemod * H.physiology.brute_mod), 0))
 					H.update_damage_overlays()
-					if(HAS_TRAIT(H, TRAIT_MASO))
-						H.adjustArousalLoss(damage * brutemod * H.physiology.brute_mod)
-						if (H.getArousalLoss() >= 100 && ishuman(H) && H.has_dna())
-							H.mob_climax(forced_climax=TRUE)
-
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage * hit_percent * brutemod * H.physiology.brute_mod)
 		if(BURN)
@@ -1771,8 +1680,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				H.adjustStaminaLoss(damage * hit_percent * H.physiology.stamina_mod)
 		if(BRAIN)
 			H.adjustBrainLoss(damage * hit_percent * H.physiology.brain_mod)
-		if(AROUSAL)											//Citadel edit - arousal
-			H.adjustArousalLoss(damage * hit_percent)
 	return 1
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)

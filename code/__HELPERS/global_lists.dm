@@ -39,29 +39,11 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_ears, GLOB.mam_ears_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_snouts, GLOB.mam_snouts_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_tails_animated, GLOB.mam_tails_animated_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/taur, GLOB.taur_list)
 	//xeno parts (hiss?)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/xeno_head, GLOB.xeno_head_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/xeno_tail, GLOB.xeno_tail_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/xeno_dorsal, GLOB.xeno_dorsal_list)
-	//genitals
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/penis, GLOB.cock_shapes_list)
-	for(var/K in GLOB.cock_shapes_list)
-		var/datum/sprite_accessory/penis/value = GLOB.cock_shapes_list[K]
-		GLOB.cock_shapes_icons[K] = value.icon_state
-
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/vagina, GLOB.vagina_shapes_list)
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/breasts, GLOB.breasts_shapes_list)
-	GLOB.breasts_size_list = list("a","b","c","d","e") //We need the list to choose from initialized, but it's no longer a sprite_accessory thing.
-	for(var/K in GLOB.breasts_shapes_list)
-		var/datum/sprite_accessory/breasts/value = GLOB.breasts_shapes_list[K]
-		GLOB.breasts_shapes_icons[K] = value.icon_state
-
-	init_sprite_accessory_subtypes(/datum/sprite_accessory/testicles, GLOB.balls_shapes_list)
-	for(var/K in GLOB.balls_shapes_list)
-		var/datum/sprite_accessory/testicles/value = GLOB.balls_shapes_list[K]
-		GLOB.balls_shapes_icons[K] = value.icon_state
-//END OF CIT CHANGES
+	//END OF CIT CHANGES
 
 	//Species
 	for(var/spath in subtypesof(/datum/species))

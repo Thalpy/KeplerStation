@@ -312,11 +312,3 @@
 /obj/item/storage/pill_bottle/mutarad/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/mutarad(src)
-
-/obj/item/storage/pill_bottle/penis_enlargement
-	name = "penis enlargement pills"
-	desc = "You want penis enlargement pills?"
-
-/obj/item/storage/pill_bottle/penis_enlargement/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/penis_enlargement(src)

@@ -384,20 +384,7 @@ There are several things that need to be remembered:
 		update_observer_view(wear_suit,1)
 
 		if(S.mutantrace_variation) //Just make sure we've got this checked too
-			if(S.taurmode == NOT_TAURIC && S.adjusted == ALT_STYLE) //are we not a taur, but we have Digitigrade legs? Run this check first, then.
-				S.alternate_worn_icon = 'modular_citadel/icons/mob/suit_digi.dmi'
-			else
-				S.alternate_worn_icon = null
-
-			if(S.tauric == TRUE) //Are we a suit with tauric mode possible?
-				if(S.taurmode == SNEK_TAURIC)
-					S.alternate_worn_icon = 'modular_citadel/icons/mob/taur_naga.dmi'
-				if(S.taurmode == PAW_TAURIC)
-					S.alternate_worn_icon = 'modular_citadel/icons/mob/taur_canine.dmi'
-				if(S.taurmode == NOT_TAURIC && S.adjusted == ALT_STYLE)
-					S.alternate_worn_icon = 'modular_citadel/icons/mob/suit_digi.dmi'
-				else if(S.taurmode == NOT_TAURIC && S.adjusted == NORMAL_STYLE)
-					S.alternate_worn_icon = null
+			S.alternate_worn_icon = null
 
 		overlays_standing[SUIT_LAYER] = S.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = ((wear_suit.alternate_worn_icon) ? S.alternate_worn_icon : 'icons/mob/suit.dmi'))
 		var/mutable_appearance/suit_overlay = overlays_standing[SUIT_LAYER]
@@ -634,20 +621,8 @@ generate/load female uniform sprites matching all previously decided variables
 
 	. += "-[gender]"
 
-
-	var/is_taur = FALSE
-	var/mob/living/carbon/human/H = src
-	if(("taur" in H.dna.species.mutant_bodyparts) && (H.dna.features["taur"] != "None"))
-		is_taur = TRUE
-
-
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
-
-		if(istype(BP, /obj/item/bodypart/r_leg) || istype(BP, /obj/item/bodypart/l_leg))
-			if(is_taur)
-				continue
-
 
 		. += "-[BP.body_zone]"
 		if(BP.status == BODYPART_ORGANIC)

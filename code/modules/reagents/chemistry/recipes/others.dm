@@ -609,7 +609,7 @@
 	name = "felined mutation toxic"
 	id = "cats"
 	results = list("felinidmutationtoxin" = 1)
-	required_reagents  = list("mindbreaker" = 1, "ammonia" = 1, "water" = 1, "aphro" = 10, "stablemutationtoxin" = 1) // Maybe aphro+ if it becomes a shitty meme
+	required_reagents  = list("mindbreaker" = 1, "ammonia" = 1, "water" = 1, "stablemutationtoxin" = 1)
 	required_temp = 450
 
 /datum/chemical_reaction/moff

@@ -22,9 +22,6 @@
 
 /datum/preferences/proc/update_preview_icon()
 	// Silicons only need a very basic preview since there is no customization for them.
-//	var/wide_icon = FALSE //CITDEL THINGS
-//	if(features["taur"] != "None")
-//		wide_icon = TRUE
 	if(job_engsec_high)
 		switch(job_engsec_high)
 			if(AI_JF)

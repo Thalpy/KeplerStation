@@ -118,15 +118,6 @@ Difficulty: Normal
 	qdel(spawned_beacon)
 	. = ..()
 
-/mob/living/simple_animal/hostile/megafauna/hierophant/devour(mob/living/L)
-	for(var/obj/item/W in L)
-		if(!L.dropItemToGround(W))
-			qdel(W)
-	visible_message("<span class='hierophant_warning'>\"[pick(kill_phrases)]\"</span>")
-	visible_message("<span class='hierophant_warning'>[src] annihilates [L]!</span>","<span class='userdanger'>You annihilate [L], restoring your health!</span>")
-	adjustHealth(-L.maxHealth*0.5)
-	L.dust()
-
 /mob/living/simple_animal/hostile/megafauna/hierophant/CanAttack(atom/the_target)
 	. = ..()
 	if(istype(the_target, /mob/living/simple_animal/hostile/asteroid/hivelordbrood)) //ignore temporary targets in favor of more permanent targets
@@ -158,8 +149,6 @@ Difficulty: Normal
 				else
 					burst_range = 3
 					INVOKE_ASYNC(src, .proc/burst, get_turf(src), 0.25) //melee attacks on living mobs cause it to release a fast burst if on cooldown
-			else
-				devour(L)
 		else
 			return ..()
 

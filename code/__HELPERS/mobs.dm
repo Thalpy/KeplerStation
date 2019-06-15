@@ -74,15 +74,7 @@
 	if(!GLOB.moth_wings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/moth_wings, GLOB.moth_wings_list)
 
-	//CIT CHANGES - genitals and such
-	if(!GLOB.cock_shapes_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/penis, GLOB.cock_shapes_list)
-	if(!GLOB.balls_shapes_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/testicles, GLOB.balls_shapes_list)
-	if(!GLOB.vagina_shapes_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/vagina, GLOB.vagina_shapes_list)
-	if(!GLOB.breasts_shapes_list.len)
-		init_sprite_accessory_subtypes(/datum/sprite_accessory/breasts, GLOB.breasts_shapes_list)
+	//CIT CHANGES
 	if(!GLOB.ipc_screens_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/screen, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
@@ -137,8 +129,6 @@
 		"tail_lizard" = pick(GLOB.tails_list_lizard),
 		"tail_human" = "None",
 		"wings" = "None",
-		"snout" = pick(GLOB.snouts_list),
-		"horns" = pick(GLOB.horns_list),
 		"ears" = "None",
 		"frills" = pick(GLOB.frills_list),
 		"spines" = pick(GLOB.spines_list),
@@ -146,7 +136,6 @@
 		"legs" = pick("Normal Legs","Digitigrade Legs"),
 		"caps" = pick(GLOB.caps_list),
 		"moth_wings" = pick(GLOB.moth_wings_list),
-		"taur" = "None",
 		"mam_body_markings" = pick(snowflake_markings_list),
 		"mam_ears" 			= pick(snowflake_ears_list),
 		"mam_snouts"		= pick(snowflake_mam_snouts_list),
@@ -155,52 +144,6 @@
 		"xenodorsal" 		= "Standard",
 		"xenohead" 			= "Standard",
 		"xenotail" 			= "Xenomorph Tail",
-		"exhibitionist" 	= FALSE,
-		"genitals_use_skintone"	= FALSE,
-		"has_cock"			= FALSE,
-		"cock_shape"		= pick(GLOB.cock_shapes_list),
-		"cock_length"		= 6,
-		"cock_girth_ratio"	= COCK_GIRTH_RATIO_DEF,
-		"cock_color"		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"has_sheath"		= FALSE,
-		"sheath_color"		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"has_balls" 		= FALSE,
-		"balls_internal" 	= FALSE,
-		"balls_color" 		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"balls_amount"		= 2,
-		"balls_sack_size"	= BALLS_SACK_SIZE_DEF,
-		"balls_size"		= BALLS_SIZE_DEF,
-		"balls_shape"		= "Pair",
-		"balls_cum_rate"	= CUM_RATE,
-		"balls_cum_mult"	= CUM_RATE_MULT,
-		"balls_efficiency"	= CUM_EFFICIENCY,
-		"balls_fluid" 		= "semen",
-		"has_ovi"			= FALSE,
-		"ovi_shape"			= "knotted",
-		"ovi_length"		= 6,
-		"ovi_color"			= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"has_eggsack" 		= FALSE,
-		"eggsack_internal" 	= TRUE,
-		"eggsack_color" 	= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"eggsack_size" 		= BALLS_SACK_SIZE_DEF,
-		"eggsack_egg_color" = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"eggsack_egg_size" 	= EGG_GIRTH_DEF,
-		"has_breasts" 		= FALSE,
-		"breasts_color" 	= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"breasts_size" 		= pick(GLOB.breasts_size_list),
-		"breasts_shape"		= "Pair",
-		"breasts_fluid" 	= "milk",
-		"has_vag"			= FALSE,
-		"vag_shape"			= pick(GLOB.vagina_shapes_list),
-		"vag_color"			= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
-		"vag_clits"			= 1,
-		"vag_clit_diam"		= 0.25,
-		"vag_clit_len"		= 0.25,
-		"has_womb"			= FALSE,
-		"womb_cum_rate"		= CUM_RATE,
-		"womb_cum_mult"		= CUM_RATE_MULT,
-		"womb_efficiency"	= CUM_EFFICIENCY,
-		"womb_fluid" 		= "femcum",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text"		= ""))

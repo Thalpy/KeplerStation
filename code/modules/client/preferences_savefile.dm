@@ -115,7 +115,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["damagescreenshake"]	>> damagescreenshake
 	S["widescreenpref"]		>> widescreenpref
 	S["autostand"]			>> autostand
-	S["cit_toggles"]		>> cit_toggles
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -149,8 +148,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	damagescreenshake	= sanitize_integer(damagescreenshake, 0, 2, initial(damagescreenshake))
 	widescreenpref			= sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
 	autostand			= sanitize_integer(autostand, 0, 1, initial(autostand))
-	cit_toggles			= sanitize_integer(cit_toggles, 0, 65535, initial(cit_toggles))
-
 
 	return 1
 
@@ -207,8 +204,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["arousable"], arousable)
 	WRITE_FILE(S["widescreenpref"], widescreenpref)
 	WRITE_FILE(S["autostand"], autostand)
-	WRITE_FILE(S["cit_toggles"], cit_toggles)
-
 	return 1
 
 /datum/preferences/proc/load_character(slot)
@@ -306,46 +301,17 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["neutral_quirks"]		>> neutral_quirks
 
 	//Citadel code
-	S["feature_genitals_use_skintone"]	>> features["genitals_use_skintone"]
-	S["feature_exhibitionist"]			>> features["exhibitionist"]
 	S["feature_mcolor2"]				>> features["mcolor2"]
 	S["feature_mcolor3"]				>> features["mcolor3"]
 	S["feature_mam_body_markings"]		>> features["mam_body_markings"]
 	S["feature_mam_tail"]				>> features["mam_tail"]
 	S["feature_mam_ears"]				>> features["mam_ears"]
 	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
-	S["feature_taur"]					>> features["taur"]
 	S["feature_mam_snouts"]				>> features["mam_snouts"]
 	//Xeno features
 	S["feature_xeno_tail"]				>> features["xenotail"]
 	S["feature_xeno_dors"]				>> features["xenodorsal"]
 	S["feature_xeno_head"]				>> features["xenohead"]
-	//cock features
-	S["feature_has_cock"]				>> features["has_cock"]
-	S["feature_cock_shape"]				>> features["cock_shape"]
-	S["feature_cock_color"]				>> features["cock_color"]
-	S["feature_cock_length"]			>> features["cock_length"]
-	S["feature_cock_girth"]				>> features["cock_girth"]
-	S["feature_has_sheath"]				>> features["sheath_color"]
-	//balls features
-	S["feature_has_balls"]				>> features["has_balls"]
-	S["feature_balls_color"]			>> features["balls_color"]
-	S["feature_balls_size"]				>> features["balls_size"]
-	S["feature_balls_shape"]			>> features["balls_shape"]
-	S["feature_balls_sack_size"]		>> features["balls_sack_size"]
-	S["feature_balls_fluid"]			>> features["balls_fluid"]
-	//breasts features
-	S["feature_has_breasts"]			>> features["has_breasts"]
-	S["feature_breasts_size"]			>> features["breasts_size"]
-	S["feature_breasts_shape"]			>> features["breasts_shape"]
-	S["feature_breasts_color"]			>> features["breasts_color"]
-	S["feature_breasts_fluid"]			>> features["breasts_fluid"]
-	//vagina features
-	S["feature_has_vag"]				>> features["has_vag"]
-	S["feature_vag_shape"]				>> features["vag_shape"]
-	S["feature_vag_color"]				>> features["vag_color"]
-	//womb features
-	S["feature_has_womb"]				>> features["has_womb"]
 	//flavor text
 	//Let's make our players NOT cry desperately as we wipe their savefiles of their special snowflake texts:
 	if((S["flavor_text"] != "") && (S["flavor_text"] != null) && S["flavor_text"]) //If old text isn't null and isn't "" but still exists.

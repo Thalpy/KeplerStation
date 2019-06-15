@@ -462,20 +462,6 @@
   build_path = /obj/item/toy/figure/wizard
   category = list("hacked", "Figurines")
 
-/datum/design/autoylathe/dildo
-	name = "Customizable Dildo"
-	id = "dildo"
-	materials = list(MAT_PLASTIC = 2000)
-	build_path = /obj/item/dildo/custom
-	category = list("initial", "Adult")
-
-/datum/design/autoylathe/collar
-	name = "Collar"
-	id = "collar"
-	materials = list(MAT_PLASTIC = 250, MAT_METAL = 50)
-	build_path = /obj/item/clothing/neck/petcollar
-	category = list("initial", "Adult")
-
 /datum/design/autoylathe/lastag/blue/gun
 	name = "Blue Lasertag Rifle"
 	id = "lastagrifleblue"

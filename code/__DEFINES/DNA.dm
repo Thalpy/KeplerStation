@@ -61,7 +61,6 @@
 #define DNA_MUTANTTAIL_BLOCK		11
 #define DNA_MUTANTEAR_BLOCK			12
 #define DNA_MUTANTMARKING_BLOCK		13
-#define DNA_TAUR_BLOCK 				14
 
 #define DNA_STRUC_ENZYMES_BLOCKS	18
 #define DNA_UNIQUE_ENZYMES_LEN		32
@@ -121,4 +120,3 @@
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
 #define ORGAN_SLOT_TAIL "tail"
-#define ORGAN_SLOT_PENIS "penis"

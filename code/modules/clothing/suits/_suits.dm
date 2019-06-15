@@ -11,8 +11,6 @@
 
 	var/adjusted = NORMAL_STYLE
 	mutantrace_variation = MUTANTRACE_VARIATION
-	var/tauric = FALSE		//Citadel Add for tauric hardsuits
-	var/taurmode = NOT_TAURIC
 	var/dimension_x = 32
 	var/dimension_y = 32
 	var/center = FALSE	//Should we center the sprite?
@@ -30,22 +28,6 @@
 				adjusted = NORMAL_STYLE
 				H.update_inv_wear_suit()
 
-		if(("taur" in H.dna.species.mutant_bodyparts) && (H.dna.features["taur"] != "None"))
-			if(H.dna.features["taur"] in list("Naga", "Tentacle"))
-				taurmode = SNEK_TAURIC
-				if(tauric == TRUE)
-					center = TRUE
-					dimension_x = 64
-			else if(H.dna.features["taur"] in list("Fox","Wolf","Otie","Drake","Lab","Shepherd","Husky","Eevee","Panther","Horse","Cow","Tiger","Deer"))
-				taurmode = PAW_TAURIC
-				if(tauric == TRUE)
-					center = TRUE
-					dimension_x = 64
-		else
-			taurmode = NOT_TAURIC
-			if(tauric == TRUE)
-				center = FALSE
-				dimension_x = 32
 		H.update_inv_wear_suit()
 
 
@@ -55,10 +37,7 @@
 		if(damaged_clothes)
 			. += mutable_appearance('icons/effects/item_damage.dmi', "damaged[blood_overlay_type]")
 		IF_HAS_BLOOD_DNA(src)
-			if(taurmode >= SNEK_TAURIC)
-				. += mutable_appearance('modular_citadel/icons/mob/64x32_effects.dmi', "[blood_overlay_type]blood")
-			else
-				. += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
+			. += mutable_appearance('icons/effects/blood.dmi', "[blood_overlay_type]blood")
 		var/mob/living/carbon/human/M = loc
 		if(ishuman(M) && M.w_uniform)
 			var/obj/item/clothing/under/U = M.w_uniform

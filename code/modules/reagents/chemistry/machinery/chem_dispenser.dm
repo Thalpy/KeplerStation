@@ -546,9 +546,7 @@
 		"clownstears",
 		"minttoxin",
 		"atomicbomb",
-		"fernet",
-		"aphro",
-		"aphro+"
+		"fernet"
 	)
 
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade //fully ugpraded stock parts, emagged

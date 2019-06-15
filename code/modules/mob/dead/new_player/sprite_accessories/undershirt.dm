@@ -231,10 +231,6 @@
 	name = "Bra - Pink"
 	icon_state = "bra_pink"
 
-/datum/sprite_accessory/undershirt/female_kinky
-	name = "Bra - Kinky Black"
-	icon_state = "bra_kinky"
-
 /datum/sprite_accessory/undershirt/female_green
 	name = "Bra - Green"
 	icon_state = "bra_green"
