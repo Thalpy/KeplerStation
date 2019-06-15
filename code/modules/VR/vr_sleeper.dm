@@ -167,7 +167,6 @@
 		vr_human.undershirt = H.undershirt
 		vr_human.underwear = H.underwear
 		vr_human.updateappearance(TRUE, TRUE, TRUE)
-		vr_human.give_genitals(TRUE) //CITADEL ADD
 		if(outfit)
 			var/datum/outfit/O = new outfit()
 			O.equip(vr_human)

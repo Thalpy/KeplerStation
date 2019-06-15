@@ -623,7 +623,6 @@
 	underwear = "Nude"
 	update_body()
 	update_hair()
-	update_genitals()
 
 /mob/living/carbon/human/singularity_pull(S, current_size)
 	..()

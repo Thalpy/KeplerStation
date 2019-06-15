@@ -82,39 +82,6 @@
 		if(new_style)
 			H.hair_style = new_style
 			H.update_hair()
-	else if (select_alteration == "Genitals")
-		var/list/organs = list()
-		var/operation = input("Select organ operation.", "Organ Manipulation", "cancel") in list("add sexual organ", "remove sexual organ", "cancel")
-		switch(operation)
-			if("add sexual organ")
-				var/new_organ = input("Select sexual organ:", "Organ Manipulation") in list("Penis", "Testicles", "Breasts", "Vagina", "Womb", "Cancel")
-				if(new_organ == "Penis")
-					H.give_penis()
-				else if(new_organ == "Testicles")
-					H.give_balls()
-				else if(new_organ == "Breasts")
-					H.give_breasts()
-				else if(new_organ == "Vagina")
-					H.give_vagina()
-				else if(new_organ == "Womb")
-					H.give_womb()
-				else
-					return
-			if("remove sexual organ")
-				for(var/obj/item/organ/genital/X in H.internal_organs)
-					var/obj/item/organ/I = X
-					organs["[I.name] ([I.type])"] = I
-				var/obj/item/organ = input("Select sexual organ:", "Organ Manipulation", null) in organs
-				organ = organs[organ]
-				if(!organ)
-					return
-				var/obj/item/organ/genital/O
-				if(isorgan(organ))
-					O = organ
-					O.Remove(H)
-				organ.forceMove(get_turf(H))
-				qdel(organ)
-				H.update_body()
 
 	else if (select_alteration == "Ears")
 		var/list/snowflake_ears_list = list("Normal" = null)

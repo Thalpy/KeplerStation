@@ -1,9 +1,3 @@
-/mob/living/carbon/human/Life()
-		//citadel code
-	if(stat != DEAD)
-		handle_arousal()
-	. = ..()
-
 /mob/living/carbon/human/update_health_hud(shown_health_amount)
 	. = ..()
 	if(!client || !hud_used)
