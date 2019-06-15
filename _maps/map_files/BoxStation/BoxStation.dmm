@@ -18235,10 +18235,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/crew_quarters/locker)
-"aQU" = (
-/obj/machinery/vending/kink,
-/turf/open/floor/plasteel,
-/area/crew_quarters/locker)
 "aQV" = (
 /obj/machinery/vending/clothing,
 /turf/open/floor/plasteel,
@@ -56647,9 +56643,6 @@
 /obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
-"evR" = (
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "eyM" = (
 /obj/machinery/mineral/ore_redemption{
 	input_dir = 2;
@@ -56869,10 +56862,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/dark,
 /area/engine/engineering)
-"imH" = (
-/obj/structure/falsewall,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "ipA" = (
 /turf/open/floor/plating,
 /area/maintenance/department/medical/morgue)
@@ -57142,11 +57131,6 @@
 	icon_state = "wood-broken5"
 	},
 /area/maintenance/bar)
-"mqZ" = (
-/obj/structure/reagent_dispensers/keg/aphro/strong,
-/obj/item/reagent_containers/glass/beaker,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "mrR" = (
 /obj/effect/spawner/lootdrop/keg,
 /turf/open/floor/wood,
@@ -57227,10 +57211,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
-"odx" = (
-/obj/machinery/vending/kink,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "olr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
@@ -57341,26 +57321,12 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
-"rBq" = (
-/obj/item/clothing/head/kitty,
-/obj/item/clothing/under/maid,
-/obj/item/clothing/mask/muzzle,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "rKP" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
 /turf/open/floor/plating,
 /area/construction)
-"rMN" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/obj/item/tank/internals/anesthetic,
-/obj/item/clothing/mask/breath,
-/obj/effect/decal/cleanable/semen,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "rNc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -57489,14 +57455,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/courtroom)
-"tur" = (
-/obj/item/restraints/handcuffs/fake,
-/turf/open/floor/plating,
-/area/maintenance/bar)
-"tyO" = (
-/obj/item/clothing/under/color/grey,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "tMl" = (
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/plasteel/showroomfloor,
@@ -57705,11 +57663,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
-"wfR" = (
-/obj/item/electropack/shockcollar,
-/obj/item/assembly/signaler,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "wkN" = (
 /turf/closed/wall,
 /area/science/circuit)
@@ -76950,7 +76903,7 @@ aLH
 aLE
 aOl
 aPA
-aQU
+aQN
 aQN
 aQN
 aUt
@@ -79571,10 +79524,10 @@ bCq
 tPT
 tRF
 mrR
-dKP
-odx
-rBq
-tur
+iiW
+gMl
+gMl
+iiW
 bCq
 bUs
 bLv
@@ -79828,10 +79781,10 @@ sXA
 mPE
 kyF
 sAM
-imH
-evR
-evR
-rMN
+cxo
+mpI
+bcU
+vzO
 bCq
 bUs
 bLv
@@ -80085,10 +80038,10 @@ iiW
 iiW
 iiW
 dfL
-dKP
-mqZ
-tyO
-wfR
+cxo
+bcU
+bcU
+vzO
 bCq
 bUs
 bLv
@@ -80342,10 +80295,10 @@ vjm
 bcU
 bcU
 bcU
-dKP
-dKP
-dKP
-dKP
+iiW
+oKh
+oKh
+iiW
 bCq
 bUs
 bLv

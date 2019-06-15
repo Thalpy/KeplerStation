@@ -126518,12 +126518,6 @@
 	dir = 1
 	},
 /area/science/circuit)
-"gVS" = (
-/obj/item/clothing/head/kitty,
-/obj/item/clothing/under/maid,
-/obj/item/clothing/mask/muzzle,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "gXn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/line{
@@ -126611,10 +126605,6 @@
 	dir = 9
 	},
 /area/science/circuit)
-"hPM" = (
-/obj/item/restraints/handcuffs/fake,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "hSf" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -126626,11 +126616,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/science/research)
-"ijB" = (
-/obj/structure/reagent_dispensers/keg/aphro/strong,
-/obj/item/reagent_containers/glass/beaker,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "iwL" = (
 /obj/machinery/status_display{
 	pixel_x = 32
@@ -127066,11 +127051,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/circuit/green,
 /area/science/research/abandoned)
-"mIi" = (
-/obj/item/electropack/shockcollar,
-/obj/item/assembly/signaler,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "mQE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -127094,10 +127074,6 @@
 	},
 /turf/open/floor/engine,
 /area/science/mixing)
-"nyN" = (
-/obj/machinery/vending/kink,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "nSh" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /turf/closed/wall/r_wall,
@@ -127210,13 +127186,6 @@
 	dir = 1
 	},
 /area/science/circuit)
-"poI" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/obj/item/tank/internals/anesthetic,
-/obj/item/clothing/mask/breath,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "psi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bodycontainer/morgue{
@@ -127429,10 +127398,6 @@
 	},
 /turf/open/floor/engine,
 /area/engine/supermatter)
-"vhA" = (
-/obj/item/clothing/under/color/grey,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "vAb" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -151169,8 +151134,8 @@ dzc
 dfY
 dfY
 dfY
-dfY
-dfY
+aaa
+aad
 aaa
 aaa
 aaa
@@ -151424,11 +151389,11 @@ dvX
 dlc
 dzd
 dfY
-nyN
-gVS
-hPM
-dfY
-ajr
+aaa
+aaa
+aaa
+aad
+aaa
 aaa
 aaa
 aad
@@ -151681,11 +151646,11 @@ dlc
 dmn
 djm
 fow
-dod
-dod
-poI
-dfY
-ajr
+aad
+aad
+aad
+aad
+aad
 aad
 aad
 aad
@@ -151938,11 +151903,11 @@ dvY
 dod
 dmi
 dfY
-ijB
-vhA
-mIi
-dfY
-ajr
+aaa
+aaa
+aaa
+aad
+aaa
 aaa
 aaa
 aad
@@ -152198,8 +152163,8 @@ dhQ
 dhQ
 dhQ
 dhQ
-dfY
-ajr
+aad
+aaa
 aaa
 aaa
 aad
