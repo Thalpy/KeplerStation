@@ -26,8 +26,6 @@
 //Species stuffs. Remember to change this if upstream updates species flags
 #define MUTCOLORS2		35
 #define MUTCOLORS3		36
-#define NOAROUSAL		37 //Stops all arousal effects
-#define NOGENITALS		38 //Cannot create, use, or otherwise have genitals
 #define MATRIXED		39	//if icon is color matrix'd
 #define SKINTONE		40	//uses skin tones
 

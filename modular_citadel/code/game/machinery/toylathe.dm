@@ -30,7 +30,6 @@
 							"Heavy",
 							"Melee",
 							"Armor",
-							"Adult",
 							"Misc",
 							"Imported"
 							)

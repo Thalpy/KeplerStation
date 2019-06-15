@@ -13,10 +13,6 @@
 	name = "Mankini - Green"
 	icon_state = "mankini_green"
 
-/datum/sprite_accessory/underwear/male_kinky
-	name = "Jockstrap - White"
-	icon_state = "jockstrap_white"
-
 /datum/sprite_accessory/underwear/male_white
 	name = "Briefs - White"
 	icon_state = "briefs_white"
@@ -110,10 +106,6 @@
 /datum/sprite_accessory/underwear/female_green
 	name = "Panties - Green"
 	icon_state = "panties_green"
-
-/datum/sprite_accessory/underwear/female_kinky
-	name = "Panties - Kinky Black"
-	icon_state = "panties_kinky"
 
 /datum/sprite_accessory/underwear/female_red
 	name = "Panties - Red"
