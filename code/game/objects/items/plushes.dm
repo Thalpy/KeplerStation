@@ -875,11 +875,6 @@
 	attack_verb = list("headbutt", "scritched", "bit")
 	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
 
-/obj/item/toy/plush/catgirl/mikeel
-	desc = "An adorable stuffed toy of some tauric cat person."
-	icon_state = "mikeel"
-	item_state = "mikeel"
-
 /obj/item/toy/plush/catgirl/skylar
 	desc = "An adorable stuffed toy that resembles a degenerate."
 	icon_state = "skylar"

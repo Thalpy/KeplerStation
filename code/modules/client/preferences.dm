@@ -102,7 +102,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		"xenodorsal" = "Standard",
 		"xenohead" = "Standard",
 		"xenotail" = "Xenomorph Tail",
-		"taur" = "None",
 		"ipc_screen" = "Sunburst",
 		"ipc_antenna" = "None",
 		"flavor_text" = ""
@@ -528,18 +527,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Moth wings</h3>"
 
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a>"
-
-				mutant_category++
-				if(mutant_category >= MAX_MUTANT_ROWS)
-					dat += "</td>"
-					mutant_category = 0
-			if("taur" in pref_species.default_features)
-				if(!mutant_category)
-					dat += APPEARANCE_CATEGORY_COLUMN
-
-				dat += "<h3>Tauric Body</h3>"
-
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=taur;task=input'>[features["taur"]]</a>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1523,7 +1510,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["tail_lizard"] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
 							features["tail_human"] = "None"
 							features["mam_tail"] = "None"
 
@@ -1540,7 +1526,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["tail_human"] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
 							features["tail_lizard"] = "None"
 							features["mam_tail"] = "None"
 
@@ -1557,7 +1542,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_tail)
 						features["mam_tail"] = new_tail
 						if(new_tail != "None")
-							features["taur"] = "None"
 							features["tail_human"] = "None"
 							features["tail_lizard"] = "None"
 
@@ -1641,24 +1625,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_s_tone)
 						skin_tone = new_s_tone
 
-				if("taur")
-					var/list/snowflake_taur_list = list()
-					for(var/path in GLOB.taur_list)
-						var/datum/sprite_accessory/taur/instance = GLOB.taur_list[path]
-						if(istype(instance, /datum/sprite_accessory))
-							var/datum/sprite_accessory/S = instance
-							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
-								snowflake_taur_list[S.name] = path
-					var/new_taur
-					new_taur = input(user, "Choose your character's tauric body:", "Character Preference") as null|anything in snowflake_taur_list
-					if(new_taur)
-						features["taur"] = new_taur
-						if(new_taur != "None")
-							features["mam_tail"] = "None"
-							features["xenotail"] = "None"
-							features["tail_human"] = "None"
-							features["tail_lizard"] = "None"
-
 				if("ears")
 					var/list/snowflake_ears_list = list()
 					for(var/path in GLOB.ears_list)
@@ -1718,7 +1684,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["xenotail"] = new_tail
 						if(new_tail != "None")
 							features["mam_tail"] = "None"
-							features["taur"] = "None"
 							features["tail_human"] = "None"
 							features["tail_lizard"] = "None"
 

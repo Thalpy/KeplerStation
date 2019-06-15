@@ -114,9 +114,6 @@
 		if(!GLOB.mam_body_markings_list.len)
 			init_sprite_accessory_subtypes(/datum/sprite_accessory/mam_body_markings, GLOB.mam_body_markings_list)
 		L[DNA_MUTANTMARKING_BLOCK] = construct_block(GLOB.mam_body_markings_list.Find(features["mam_body_markings"]), GLOB.mam_body_markings_list.len)
-		if(!GLOB.taur_list.len)
-			init_sprite_accessory_subtypes(/datum/sprite_accessory/taur, GLOB.taur_list)
-		L[DNA_TAUR_BLOCK] = construct_block(GLOB.taur_list.Find(features["taur"]), GLOB.taur_list.len)
 
 	for(var/i=1, i<=DNA_UNI_IDENTITY_BLOCKS, i++)
 		if(L[i])
@@ -179,8 +176,6 @@
 			construct_block(GLOB.mam_ears_list.Find(features["mam_ears"]), GLOB.mam_ears_list.len)
 		if(DNA_MUTANTMARKING_BLOCK)
 			construct_block(GLOB.mam_body_markings_list.Find(features["mam_body_markings"]), GLOB.mam_body_markings_list.len)
-		if(DNA_TAUR_BLOCK)
-			construct_block(GLOB.taur_list.Find(features["taur"]), GLOB.taur_list.len)
 
 /datum/dna/proc/mutations_say_mods(message)
 	if(message)

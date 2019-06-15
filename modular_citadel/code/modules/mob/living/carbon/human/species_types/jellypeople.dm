@@ -10,8 +10,8 @@
 	default_color = "00FFFF"
 	species_traits = list(MUTCOLORS,EYECOLOR,HAIR,FACEHAIR,NOBLOOD)
 	inherent_traits = list(TRAIT_TOXINLOVER)
-	mutant_bodyparts = list("mam_tail", "mam_ears", "mam_body_markings", "mam_snouts", "taur")
-	default_features = list("mcolor" = "FFF", "mcolor2" = "FFF","mcolor3" = "FFF", "mam_tail" = "None", "mam_ears" = "None", "mam_body_markings" = "Plain", "mam_snouts" = "None", "taur" = "None")
+	mutant_bodyparts = list("mam_tail", "mam_ears", "mam_body_markings", "mam_snouts")
+	default_features = list("mcolor" = "FFF", "mcolor2" = "FFF","mcolor3" = "FFF", "mam_tail" = "None", "mam_ears" = "None", "mam_body_markings" = "Plain", "mam_snouts" = "None")
 	say_mod = "says"
 	hair_color = "mutcolor"
 	hair_alpha = 160 //a notch brighter so it blends better.
@@ -69,7 +69,7 @@
 
 /datum/action/innate/slime_change/proc/change_form()
 	var/mob/living/carbon/human/H = owner
-	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Hair Style", "Tail", "Snout", "Markings", "Ears", "Taur body", "Cancel")
+	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Hair Style", "Tail", "Snout", "Markings", "Ears", "Cancel")
 	if(select_alteration == "Hair Style")
 		if(H.gender == MALE)
 			var/new_style = input(owner, "Select a facial hair style", "Hair Alterations")  as null|anything in GLOB.facial_hair_styles_list
@@ -142,24 +142,6 @@
 		new_tail = input(owner, "Choose your character's Tail(s):", "Tail Alteration") as null|anything in snowflake_tails_list
 		if(new_tail)
 			H.dna.features["mam_tail"] = new_tail
-			if(new_tail != "None")
-				H.dna.features["taur"] = "None"
-		H.update_body()
-
-	else if (select_alteration == "Taur body")
-		var/list/snowflake_taur_list = list("Normal" = null)
-		for(var/path in GLOB.taur_list)
-			var/datum/sprite_accessory/taur/instance = GLOB.taur_list[path]
-			if(istype(instance, /datum/sprite_accessory))
-				var/datum/sprite_accessory/S = instance
-				if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(H.client.ckey)))
-					snowflake_taur_list[S.name] = path
-		var/new_taur
-		new_taur = input(owner, "Choose your character's tauric body:", "Tauric Alteration") as null|anything in snowflake_taur_list
-		if(new_taur)
-			H.dna.features["taur"] = new_taur
-			if(new_taur != "None")
-				H.dna.features["mam_tail"] = "None"
 		H.update_body()
 	else
 		return
