@@ -16,7 +16,7 @@
 	if(!H)
 		return
 	if(H.sprinting)
-		icon_state = "act_sprint_own"
+		icon_state = "act_sprint_on"
 	else
 		icon_state = "act_sprint"
 
