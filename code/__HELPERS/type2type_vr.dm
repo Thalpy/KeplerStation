@@ -1,9 +1,5 @@
-/*
-// Contains VOREStation based vore description type2type functions
 // list2text - takes delimiter and returns text
 // text2list - takes delimiter, and creates list
-//
-*/
 
 // Concatenates a list of strings into a single string.  A seperator may optionally be provided.
 /proc/list2text(list/ls, sep)

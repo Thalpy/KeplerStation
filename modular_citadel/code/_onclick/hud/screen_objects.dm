@@ -16,7 +16,7 @@
 	if(!H)
 		return
 	if(H.sprinting)
-		icon_state = "act_sprint_on"
+		icon_state = "act_sprint_own"
 	else
 		icon_state = "act_sprint"
 
@@ -47,21 +47,3 @@
 		icon_state = "combat"
 	else
 		icon_state = "combat_off"
-
-/obj/screen/voretoggle
-	name = "toggle vore mode"
-	icon = 'modular_citadel/icons/ui/screen_midnight.dmi'
-	icon_state = "nom_off"
-
-/obj/screen/voretoggle/Click()
-	if(iscarbon(usr))
-		var/mob/living/carbon/C = usr
-		C.toggle_vore_mode()
-
-/obj/screen/voretoggle/proc/rebaseintomygut(mob/living/carbon/C)
-	if(!C)
-		return
-	if(C.voremode && !C.combatmode)
-		icon_state = "nom"
-	else
-		icon_state = "nom_off"

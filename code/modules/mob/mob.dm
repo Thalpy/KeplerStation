@@ -37,7 +37,6 @@
 	. = ..()
 	update_config_movespeed()
 	update_movespeed(TRUE)
-	hook_vr("mob_new",list(src))
 
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
@@ -132,7 +131,7 @@
 		if(M == src) //the src always see the main message or self message
 			if(self_message)
 				msg = self_message
-		else //CITADEL EDIT, required for vore code to remove (T != loc && T != src)) as a check
+		else //CITADEL EDIT, required for code to remove (T != loc && T != src)) as a check
 			if(M.see_invisible<invisibility) //if src is invisible to us,
 				if(blind_message) // then people see blind message if there is one, otherwise nothing.
 					msg = blind_message

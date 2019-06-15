@@ -113,7 +113,6 @@
 			if(istype(dicc) && dicc.is_exposed())
 				msg += "[dicc.desc]\n"
 
-	msg += attempt_vr(src,"examine_bellies",args) //vore Code
 //END OF CIT CHANGES
 
 	//Jitters
