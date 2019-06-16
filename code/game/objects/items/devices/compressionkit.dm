@@ -83,7 +83,7 @@
 				sparks()
 				flash_lighting_fx(3, 3, LIGHT_COLOR_CYAN)
 				O.w_class -= 1
-				O.force_mult -= damage_multiplier
+				//O.force_mult -= damage_multiplier
 				charges -= 1
 				to_chat(user, "<span class='notice'>You successfully compress [target]! The compressor now has [charges] charges.</span>")
 		else
