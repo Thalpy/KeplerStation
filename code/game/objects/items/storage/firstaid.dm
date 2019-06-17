@@ -312,16 +312,6 @@
 /obj/item/storage/pill_bottle/mutarad/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/pill/mutarad(src)
-<<<<<<< HEAD
-=======
-
-/obj/item/storage/pill_bottle/penis_enlargement
-	name = "penis enlargement pills"
-	desc = "You want penis enlargement pills?"
-
-/obj/item/storage/pill_bottle/penis_enlargement/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/pill/penis_enlargement(src)
 
 /////////////
 //Organ Box//
@@ -365,4 +355,3 @@
 	/obj/item/stack/sheet/mineral/silver,
 	/obj/item/organ_storage
 	))
->>>>>>> 78c969a9c... Merge pull request #8584 from Trilbyspaceclone/patch-172
