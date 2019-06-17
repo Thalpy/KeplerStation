@@ -1,0 +1,4 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - rscadd: "adds the sec jetpack to sec hardsuit storge"
