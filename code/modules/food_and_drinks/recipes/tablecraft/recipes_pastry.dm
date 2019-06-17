@@ -22,6 +22,19 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/donut
 	subcategory = CAT_PASTRY
+<<<<<<< HEAD
+=======
+
+/datum/crafting_recipe/food/donut
+	time = 15
+	name = "Semen donut"
+	reqs = list(
+		/datum/reagent/consumable/semen = 10,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/semen
+	subcategory = CAT_PASTRY
+>>>>>>> 95dc8084f... Moving some tablecrafting recipes to the appropriate categories (#8658)
 
 datum/crafting_recipe/food/donut/meat
 	time = 15
@@ -194,16 +207,6 @@ datum/crafting_recipe/food/donut/meat
 	subcategory = CAT_PASTRY
 
 ////////////////////////////////////////////OTHER////////////////////////////////////////////
-
-/datum/crafting_recipe/food/hotdog
-	name = "Hot dog"
-	reqs = list(
-		/datum/reagent/consumable/ketchup = 5,
-		/obj/item/reagent_containers/food/snacks/bun = 1,
-		/obj/item/reagent_containers/food/snacks/sausage = 1
-	)
-	result = /obj/item/reagent_containers/food/snacks/hotdog
-	subcategory = CAT_PASTRY
 
 /datum/crafting_recipe/food/meatbun
 	name = "Meat bun"
