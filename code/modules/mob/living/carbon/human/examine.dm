@@ -26,7 +26,7 @@
 		else if(skipface)
 			msg += "You can't make out what species they are.\n"
 		else
-			msg += "[t_He] [t_is] a [H.dna.custom_species ? H.dna.custom_species : pref_species.name]!\n"
+			msg += "[t_He] [t_is] a [pref_species.name]!\n"
 
 	//uniform
 	if(w_uniform && !(SLOT_W_UNIFORM in obscured))
