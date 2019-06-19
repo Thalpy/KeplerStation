@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - rscadd: "SSChat_prompt - a small message will pop up in the chat window every 10 minutes, with helpful information"
