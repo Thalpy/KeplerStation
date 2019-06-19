@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(chat_prompts)
 /datum/controller/subsystem/chat_prompts/Initialize()
 	var/promptext = file2text("config/idle_announce.txt")
 	prompts = text2list(promptext)
+	return ..()
 
 /datum/controller/subsystem/chat_prompts/fire()
 	var/message = pick(prompts)
