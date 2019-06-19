@@ -10,4 +10,4 @@ SUBSYSTEM_DEF(chat_prompts)
 
 /datum/controller/subsystem/chat_prompts/fire()
 	var/message = pick(prompts)
-	to_chat(world, "<span class='notice'><b>INFO: </b></span> [message]")
+	to_chat(world, "<span class='notice'><b>INFO: </b></span>[message]")
