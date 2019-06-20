@@ -122,6 +122,13 @@ SUBSYSTEM_DEF(vote)
 	var/restart = 0
 	if(.)
 		switch(mode)
+			if("roundtype") //CIT CHANGE - adds the roundstart extended/secret vote
+				if(SSticker.current_state > GAME_STATE_PREGAME)//Don't change the mode if the round already started.
+					return message_admins("A vote has tried to change the gamemode, but the game has already started. Aborting.")
+				GLOB.master_mode = .
+				SSticker.save_mode(.)
+				message_admins("The gamemode has been voted for, and has been changed to: [GLOB.master_mode]")
+				log_admin("Gamemode has been voted for and switched to: [GLOB.master_mode].")
 			if("restart")
 				if(. == "Restart Round")
 					restart = 1
@@ -197,6 +204,8 @@ SUBSYSTEM_DEF(vote)
 				choices.Add(config.maplist)
 				for(var/i in choices)//this is necessary because otherwise we'll end up with a bunch of /datum/map_config's as the default vote value instead of 0 as intended
 					choices[i] = 0
+			if("roundtype") //CIT CHANGE - adds the roundstart secret/extended vote
+				choices.Add("secret", "extended")
 			if("custom")
 				question = stripped_input(usr,"What is the vote for?")
 				if(!question)
