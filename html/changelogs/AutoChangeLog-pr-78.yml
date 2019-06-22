@@ -1,0 +1,5 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - tweak: "Roundstart voting is now a config option"
+  - config: "Disabled roundstart voting"
