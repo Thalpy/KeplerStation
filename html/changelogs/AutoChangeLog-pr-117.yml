@@ -1,0 +1,8 @@
+author: "AffectedArc07"
+delete-after: True
+changes: 
+  - tweak: "Completely overhauled the PDA UI"
+  - tweak: "Crew manifest on the PDA no longer requires cartridge access"
+  - tweak: "Crew manifest on the PDA is now ordered by departments, instead of alphabetically by name"
+  - imageadd: "New icons for all the PDA functions
+remove: Removed the newscaster PDA cartridge"
