@@ -138,8 +138,13 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 			smack = 0
 		else if(iscarbon(M))
 			var/mob/living/carbon/C = M
+<<<<<<< HEAD
 			if(!istype(C.head, /obj/item/clothing/head/helmet))
 				C.adjustBrainLoss(5, 60)
+=======
+			if(!istype(C.head, /obj/item/clothing/head))	
+				C.adjustBrainLoss(10, 80)
+>>>>>>> 8a2a0100c... Merge pull request #8772 from Sishen1542/bibleblack
 				to_chat(C, "<span class='danger'>You feel dumber.</span>")
 
 		if(smack)
