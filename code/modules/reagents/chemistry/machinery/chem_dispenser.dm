@@ -562,13 +562,7 @@
 		"alexander",
 		"clownstears",
 		"minttoxin",
-		"atomicbomb",
-<<<<<<< HEAD
-		"fernet"
-=======
-		"aphro",
-		"aphro+"
->>>>>>> d4b9b52f1... Merge pull request #8728 from Sishen1542/JESUSFUCKFIXDISPENSERSALREADYGODDAMN
+		"atomicbomb"
 	)
 
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade //fully ugpraded stock parts, emagged
