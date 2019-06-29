@@ -1,0 +1,4 @@
+author: "CornMyCob"
+delete-after: True
+changes: 
+  - rscadd: "Admin log displays to admins when a player is admin frozen."
