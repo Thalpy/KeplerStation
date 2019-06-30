@@ -9,8 +9,8 @@
 		"yells, ''@pick(curse_words), what am I meant to do with this @pick(adjective_insult) @pick(nouns_objects).''"
 	],
 	
-    "verbs_use": [
-        "touch",
+	"verbs_use": [
+		"touch",
 		"hold",
 		"poke",
 		"punch",
@@ -23,41 +23,41 @@
 		"beat",
 		"tackle",
 		"destroy"
-    ],
+	],
 
-    "verbs_touch": [
-        "pat",
-        "mess with",
-        "absorb",
-        "sneeze on",
-        "inject",
-        "rip",
-        "slap",
-        "grab",
+	"verbs_touch": [
+		"pat",
+		"mess with",
+		"absorb",
+		"sneeze on",
+		"inject",
+		"rip",
+		"slap",
+		"grab",
 		"choke"
-    ],
+	],
 	
-    "verbs_move": [
+	"verbs_move": [
 		"run",
-        "jog",
-        "leg it",
-        "slide",
-        "cheese it",
-        "walk",
-        "stroll",
-        "fly",
+		"jog",
+		"leg it",
+		"slide",
+		"cheese it",
+		"walk",
+		"stroll",
+		"fly",
 		"scoot",
 		"yakkety",
 		"speed",
 		"fuck off",
 		"escape"
-    ],
+	],
 
-    "nouns_insult": [
-        "shitcurity",
-        "comdom",
-        "greytider",
-        "tator",
+	"nouns_insult": [
+		"shitcurity",
+		"comdom",
+		"greytider",
+		"tator",
 		"bitch",
 		"cluwn",
 		"monkey",
@@ -67,10 +67,10 @@
 		"oaf-lookin' schooner",
 		"worm-eyed hotten blaugh",
 		"vile stoochie"
-    ],
+	],
 
-    "nouns_generic": [
-        "you",
+	"nouns_generic": [
+		"you",
 		"you there",
 		"guy",
 		"person",
@@ -78,10 +78,10 @@
 		"jerk",
 		"officer",
 		"schooner",
-		"shithead",
-    ],
+		"shithead"
+	],
 
-    "nouns_objects": [
+	"nouns_objects": [
 		"thing",
 		"tool",
 		"whatever",
@@ -90,70 +90,70 @@
 		"toy",
 		"device",
 		"whatever",
-        "squid",
+		"squid",
 		"plush"
-    ],
+	],
 
-    "nouns_body": [
-        "ass",
-        "head",
-        "face",
-        "arms",
-        "fingers",
-        "toes",
-        "chest",
-        "eyes",
+	"nouns_body": [
+		"ass",
+		"head",
+		"face",
+		"arms",
+		"fingers",
+		"toes",
+		"chest",
+		"eyes",
 		"nails",
 		"groin",
 		"stomach",
 		"intestines",
 		"knees"
-    ],
+	],
 
-    "adjective_insult": [
-        "ugly",
-        "repulsive",
-        "dumb",
-        "asinine",
-        "childish",
-        "captain-like",
-        "whoreish",
+	"adjective_insult": [
+		"ugly",
+		"repulsive",
+		"dumb",
+		"asinine",
+		"childish",
+		"captain-like",
+		"whoreish",
 		"dimwit",
 		"jerk-face",
-		"vomit-inducer",
-    ],
+		"vomit-inducer"
+	],
 
-    "adjective_objects": [
-        "big",
-        "small",
-        "tiny",
-        "round",
-        "square",
-        "oblong",
-        "colorful",
-        "dull",
+	"adjective_objects": [
+		"big",
+		"small",
+		"tiny",
+		"round",
+		"square",
+		"oblong",
+		"colorful",
+		"dull",
 		"shiny",
 		"sparkling",
 		"blinking",
-		"awful",
-    ],
+		"awful"
+	],
 
-    "adjective_generic": [
-        "nice",
-        "pretty",
-        "ugly",
-        "bad",
-        "okay",
-        "stupid"
-    ],
+	"adjective_generic": [
+		"nice",
+		"pretty",
+		"ugly",
+		"bad",
+		"okay",
+		"stupid"
+	],
 	
-    "curse_words": [
-        "damn",
-        "shit",
-        "arse",
-        "ass",
+	"curse_words": [
+		"damn",
+		"shit",
+		"arse",
+		"ass",
 		"wank",
 		"jerk",
-		"bitch",
-    ]
+		"bitch"
+	]
 }

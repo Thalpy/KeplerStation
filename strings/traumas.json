@@ -1,6 +1,6 @@
 {
-    "brain_damage": [
-        "without oxigen blob don't evoluate?",
+	"brain_damage": [
+		"without oxigen blob don't evoluate?",
 		"CAPTAINS A COMDOM",
 		"Bi is THE BEST OF BOTH WORLDS",
 		"I WANNA PET TEH monkeyS",
@@ -9,7 +9,7 @@
 		"my dad own this station",
 		"the monkey have TASER ARMS!",
 		"WAKE UP SHEEPLES!",
-		"can u give me @pick(mutations)?"
+		"can u give me @pick(mutations)?",
 		"stat me",
 		"lifelike texture",
 		"luv can bloooom",
@@ -19,7 +19,7 @@
 		"h-h-HalP MaINT",
 		"dey come, dey COME! DEY COME!!!",
 		"I FOT AND DIED FOR MUH @pick(reasons)!"
-    ],
+	],
 
 
 	"reasons": [
@@ -27,115 +27,115 @@
 		"FREEDOM",
 		"payCHEK",
 		"caRGO points",
-		"dog"
-		"fluffy fwiends"
+		"dog",
+		"fluffy fwiends",
 		"gateway LOOT"
 	],
-    "mutations": [
-        "telikesis",
-        "halk",
-        "eppilapse",
-        "kamelien",
-        "eksrey",
-        "glowey skin",
-        "stun gloves"
-    ],
+	"mutations": [
+		"telikesis",
+		"halk",
+		"eppilapse",
+		"kamelien",
+		"eksrey",
+		"glowey skin",
+		"stun gloves"
+	],
 
-    "george": [
-        "joerge",
-        "george",
-        "gorge",
-        "gdoruge"
-    ],
+	"george": [
+		"joerge",
+		"george",
+		"gorge",
+		"gdoruge"
+	],
 
-    "mellens": [
-        "mellens",
-        "melons",
-        "mwrlins"
-    ],
+	"mellens": [
+		"mellens",
+		"melons",
+		"mwrlins"
+	],
 
-    "random_gibberish": [
-        "g",
-        "squid",
-        "r",
-        "carbon dioxide"
-    ],
+	"random_gibberish": [
+		"g",
+		"squid",
+		"r",
+		"carbon dioxide"
+	],
 
-    "y_replacements": [
-        "y",
-        "i",
-        "e"
-    ],
+	"y_replacements": [
+		"y",
+		"i",
+		"e"
+	],
 
-    "servers": [
-        "bager",
-        "sybl",
-        "mrs sybil",
-        "mr basil",
+	"servers": [
+		"bager",
+		"sybl",
+		"mrs sybil",
+		"mr basil",
 		"sisadel",
 		"dullus",
 		"colon marhens",
 		"haylo",
 		"EEGEE",
-        "mr terry",
-        "berry"
-    ],
+		"mr terry",
+		"berry"
+	],
 
-    "create_verbs": [
-        "spawn",
-        "MAke me",
-        "creat"
-    ],
+	"create_verbs": [
+		"spawn",
+		"MAke me",
+		"creat"
+	],
 
-    "create_nouns": [
-        "zenomorfs",
-        "ayleins",
-        "treaitors",
-        "sheadow lings",
-        "abdoocters",
-        "revinent"
-    ],
+	"create_nouns": [
+		"zenomorfs",
+		"ayleins",
+		"treaitors",
+		"sheadow lings",
+		"abdoocters",
+		"revinent"
+	],
 	
-    "bug": [
-        "",
-        "IS TIS A BUG??",
-        "SI IST A BUGG/",
-        "BUG!!!",
+	"bug": [
+		"",
+		"IS TIS A BUG??",
+		"SI IST A BUGG/",
+		"BUG!!!",
 		"HUE, FEATURE!!"
-    ],
+	],
 	
-    "semicolon": [
-        "",
-        ";",
-        ".h"
-    ],
+	"semicolon": [
+		"",
+		";",
+		".h"
+	],
 
-    "god_foe": [
-        "MORTALS",
-        "HERETICS",
-        "INSECTS",
+	"god_foe": [
+		"MORTALS",
+		"HERETICS",
+		"INSECTS",
 		"UNBELIEVERS",
 		"BLASPHEMERS",
 		"PARASITES",
 		"WEAKLINGS",
 		"PEASANTS"
-    ],
+	],
 
-    "god_aggressive": [
-        "BEGONE, @pick(god_foe)!",
-        "DIE, @pick(god_foe)!",
-        "BLEED, @pick(god_foe)!",
+	"god_aggressive": [
+		"BEGONE, @pick(god_foe)!",
+		"DIE, @pick(god_foe)!",
+		"BLEED, @pick(god_foe)!",
 		"BURN, @pick(god_foe)!",
 		"ALL WILL FALL BEFORE ME!",
 		"ENDLESS SUFFERING AWAITS YOU, @pick(god_foe).",
 		"DEATH TO @pick(god_foe)!"
-    ],
+	],
 
-    "god_neutral": [
-        "STOP",
+	"god_neutral": [
+		"STOP",
 	"HALT.",
-        "BE SILENT.",
-        "QUIET",
+		"BE SILENT.",
+		"QUIET",
 		"SEE THE TRUTH BEFORE YOU, MORTALS.",
 		"MORTALS, SAY YOUR NAME",
 		"BEGONE, MORTALS.",
@@ -145,20 +145,20 @@
 		"REST, MORTALS, TOMORROW IS A LONG DAY.",
 		"YOU MORTALS MAKE ME SICK.",
 		"HONK..."
-    ],
+	],
 
-    "god_unstun": [
+	"god_unstun": [
 		"GET UP. I HAVE NO TIME TO LOSE.",
 		"GET UP, PRIEST.",
 		"GET UP."
-    ],
+	],
 
-    "god_heal": [
+	"god_heal": [
 		"YOU WILL LIVE TO SEE ANOTHER DAY.",
 		"YOU SHALL SURVIVE THIS, MY PRIEST.",
 		"BE HEALED, PRIEST.",
 		"YOUR LIFE IS IMPORTANT. KEEP IT."
-    ],
+	],
 
 	"roles": [
 		"heds",
