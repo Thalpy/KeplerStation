@@ -1,0 +1,6 @@
+author: "Shadeykins"
+delete-after: True
+changes: 
+  - tweak: "Changes the name/references of a food item to meatball."
+  - tweak: "Changes a bunch of the brain damage strings."
+  - tweak: "Clears out a lot of pre-inputted names in some config/.txt files that shouldn't be there."
