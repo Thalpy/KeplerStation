@@ -1,0 +1,5 @@
+author: "Shadeykins"
+delete-after: True
+changes: 
+  - rscadd: "legitimate commando names"
+  - rscdel: "remove meme names"
