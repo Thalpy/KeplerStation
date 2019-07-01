@@ -1,7 +1,0 @@
-author: "Alonefromhell"
-delete-after: True
-changes: 
-  - rscdel: "Removed merp, nya, dab, weh and awoo emotes"
-  - sounddel: "Removed unused emote sound files"
-  - tweak: "Moved all the emotes to a single file."
-  - tweak: "hug and kiss emote no longer rely on hearing"
