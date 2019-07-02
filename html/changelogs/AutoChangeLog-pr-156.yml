@@ -1,4 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - rscadd: "You can now blacklist words from IC chat via config"
