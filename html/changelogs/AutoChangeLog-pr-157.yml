@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - tweak: "input tweaks - LOOC is now \"L\", Whisper is now \"U\", Subtle is now \"N\""
