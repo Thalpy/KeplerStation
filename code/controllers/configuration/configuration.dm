@@ -241,6 +241,7 @@
 
 /datum/controller/configuration/proc/LoadMOTD()
 	motd = file2text("[directory]/motd.txt")
+	GLOB.server_tos = file2text("config/tos.txt")
 	var/tm_info = GLOB.revdata.GetTestMergeInfo()
 	if(motd || tm_info)
 		motd = motd ? "[motd]<br>[tm_info]" : tm_info
