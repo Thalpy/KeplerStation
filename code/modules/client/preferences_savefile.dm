@@ -293,18 +293,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["negative_quirks"]	>> negative_quirks
 	S["neutral_quirks"]		>> neutral_quirks
 
-	//Citadel code
-	S["feature_mcolor2"]				>> features["mcolor2"]
-	S["feature_mcolor3"]				>> features["mcolor3"]
-	S["feature_mam_body_markings"]		>> features["mam_body_markings"]
-	S["feature_mam_tail"]				>> features["mam_tail"]
-	S["feature_mam_ears"]				>> features["mam_ears"]
-	S["feature_mam_tail_animated"]		>> features["mam_tail_animated"]
-	S["feature_mam_snouts"]				>> features["mam_snouts"]
-	//Xeno features
-	S["feature_xeno_tail"]				>> features["xenotail"]
-	S["feature_xeno_dors"]				>> features["xenodorsal"]
-	S["feature_xeno_head"]				>> features["xenohead"]
 	//flavor text
 	//Let's make our players NOT cry desperately as we wipe their savefiles of their special snowflake texts:
 	if((S["flavor_text"] != "") && (S["flavor_text"] != null) && S["flavor_text"]) //If old text isn't null and isn't "" but still exists.
