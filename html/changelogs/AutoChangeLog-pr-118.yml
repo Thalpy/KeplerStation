@@ -1,5 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - rscdel: "Removed Citadel IPCs, good ones are coming soon"
-  - tweak: "Completely refactored species"
