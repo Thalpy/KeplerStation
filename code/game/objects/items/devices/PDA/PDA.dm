@@ -261,9 +261,12 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<li>[PDAIMG(notes)]<a href='byond://?src=[REF(src)];choice=1'>Notekeeper</a></li>"
 				dat += "<li>[PDAIMG(mail)]<a href='byond://?src=[REF(src)];choice=2'>Messenger</a></li>"
 				dat += "<li>[PDAIMG(notes)]<a href='byond://?src=[REF(src)];choice=41'>View Crew Manifest</a></li>"
+				dat += "</ul>"
 
 				if (cartridge)
-					dat += "<h4>Cartridge Functions</h4>"
+					dat += "<h4>Cartridge Functions</h4><ul>"
+					if (cartridge.access & CART_JANITOR)
+						dat += "<li>[PDAIMG(bucket)]<a href='byond://?src=[REF(src)];choice=49'>Custodial Locator</a></li>"
 					if (cartridge.access & CART_CLOWN)
 						dat += "<li>[PDAIMG(honk)]<a href='byond://?src=[REF(src)];choice=Honk'>Honk Synthesizer</a></li>"
 						dat += "<li>[PDAIMG(honk)]<a href='byond://?src=[REF(src)];choice=Trombone'>Sad Trombone</a></li>"						
@@ -288,15 +291,13 @@ GLOBAL_LIST_EMPTY(PDAs)
 						dat += "<li>[PDAIMG(crate)]<a href='byond://?src=[REF(src)];choice=47'>Supply Records</A></li>"
 						dat += "<li>[PDAIMG(crate)]<a href='byond://?src=[REF(src)];choice=48'>Ore Silo Logs</a></li>"
 						dat += "</ul>"
-				dat += "</ul>"
+					dat += "</ul>"
 
 				dat += "<h4>Utilities</h4>"
 				dat += "<ul>"
 				if (cartridge)
 					if(cartridge.bot_access_flags)
 						dat += "<li>[PDAIMG(medbot)]<a href='byond://?src=[REF(src)];choice=54'>Bots Access</a></li>"
-					if (cartridge.access & CART_JANITOR)
-						dat += "<li>[PDAIMG(bucket)]<a href='byond://?src=[REF(src)];choice=49'>Custodial Locator</a></li>"
 					if (istype(cartridge.radio))
 						dat += "<li>[PDAIMG(signaler)]<a href='byond://?src=[REF(src)];choice=40'>Signaler System</a></li>"
 					if (cartridge.access & CART_REAGENT_SCANNER)
