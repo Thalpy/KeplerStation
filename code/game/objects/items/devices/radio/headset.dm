@@ -122,9 +122,10 @@
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/headset_com
 
+/* KEPLER CHANGE: We dont want megaphone headsets
 /obj/item/radio/headset/heads
 	command = TRUE
-
+*/
 /obj/item/radio/headset/heads/captain
 	name = "\proper the captain's headset"
 	desc = "The headset of the king.\nChannels are as follows: :c - command, :s - security, :e - engineering, :u - supply, :v - service, :m - medical, :n - science."
@@ -227,7 +228,7 @@
 /obj/item/radio/headset/ai
 	name = "\proper Integrated Subspace Transceiver "
 	keyslot2 = new /obj/item/encryptionkey/ai
-	command = TRUE
+	// command = TRUE // KEPLER CHANGE: We dont want megaphone headsets
 
 /obj/item/radio/headset/ai/can_receive(freq, level)
 	return ..(freq, level, TRUE)
