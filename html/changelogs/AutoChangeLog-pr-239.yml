@@ -1,5 +1,0 @@
-author: "KeplerStation-Bot"
-delete-after: True
-changes: 
-  - tweak: "melee and block harm"
-  - bugfix: "sprites*"
