@@ -232,6 +232,7 @@ GLOBAL_VAR(restart_counter)
 
 	log_world("World rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
+	parse_server_logs() // KEPLER CHANGE - If logs have been closed, parse them now
 	..()
 
 /world/proc/update_status()
