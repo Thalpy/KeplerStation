@@ -1,0 +1,4 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - tweak: "air alarms are green now instead of blue when the atmosphere is ideal"
