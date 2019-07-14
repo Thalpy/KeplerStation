@@ -1,0 +1,5 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - rscadd: "new nodes"
+  - balance: "points and node gear"
