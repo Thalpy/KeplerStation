@@ -1,4 +1,0 @@
-author: "KeplerStation-Bot"
-delete-after: True
-changes: 
-  - tweak: "Checking yourself shouldn't freeze the client anymore."
