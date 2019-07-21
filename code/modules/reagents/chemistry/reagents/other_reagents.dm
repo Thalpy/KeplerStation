@@ -1907,3 +1907,41 @@
 	description = "The primary precursor for an ancient feline delicacy known as skooma. While it has no notable effects on it's own, mixing it with morphine in a chilled container may yield interesting results."
 	color = "#FAEAFF"
 	taste_description = "synthetic catnip"
+
+/datum/reagent/changeling_string
+	name = "UNKNOWN"
+	id = "changeling_sting_real"
+	description = "404: Chemical not found."
+	metabolization_rate = REAGENTS_METABOLISM
+	color = "#0000FF"
+	can_synth = FALSE
+	var/datum/dna/original_dna
+	var/reagent_ticks = 0
+	invisible = TRUE
+
+/datum/reagent/changeling_string/on_mob_metabolize(mob/living/carbon/C)
+	if(C && C.dna && data["desired_dna"])
+		original_dna = new C.dna.type
+		C.dna.copy_dna(original_dna)
+		var/datum/dna/new_dna = data["desired_dna"]
+		new_dna.copy_dna(C.dna)
+		C.real_name = new_dna.real_name
+		C.updateappearance(mutcolor_update=1)
+		C.update_body()
+		C.domutcheck()
+		C.regenerate_icons()
+	..()
+
+/datum/reagent/changeling_string/on_mob_end_metabolize(mob/living/carbon/C)
+	if(original_dna)
+		original_dna.copy_dna(C.dna)
+		C.real_name = original_dna.real_name
+		C.updateappearance(mutcolor_update=1)
+		C.update_body()
+		C.domutcheck()
+		C.regenerate_icons()
+	..()
+
+/datum/reagent/changeling_string/Destroy()
+	qdel(original_dna)
+	return ..()
