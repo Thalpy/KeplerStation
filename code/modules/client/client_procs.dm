@@ -1,7 +1,8 @@
 	////////////
 	//SECURITY//
 	////////////
-#define UPLOAD_LIMIT		1048576	//Restricts client uploads to the server to 1MB //Could probably do with being lower.
+#define UPLOAD_LIMIT		10485760	// Restricts client uploads to the server to 10MB Could probably do with being lower.
+										// KEPLER CHANGE: No this does not need to be lower. This thing used to be 1mb and that is fuck all
 
 GLOBAL_LIST_INIT(blacklisted_builds, list(
 	"1407" = "bug preventing client display overrides from working leads to clients being able to see things/mobs they shouldn't be able to see",
