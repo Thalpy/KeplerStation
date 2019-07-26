@@ -1,4 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - tweak: "Admins can now upload MIDIs and sound files larger than 1MB (Cap is 10MB)"
