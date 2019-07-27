@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - bugfix: "[Omegastation] Jobs that shouldn't be available, should no longer appear"
