@@ -1,3 +1,8 @@
+//Defines. You must use the species ID and not the species path, otherwise it dont work
+#define SPECIES_ID_SLIMEPERSON	"slimeperson"
+#define SPECIES_ID_IPC			"ipc"
+
+
 //The code execution of the emote datum is located at code/datums/emotes.dm
 /mob/proc/emote(act, m_type = null, message = null, intentional = FALSE)
 	act = lowertext(act)
@@ -12,6 +17,14 @@
 	if(!E)
 		to_chat(src, "<span class='notice'>Unusable emote '[act]'. Say *help for a list.</span>")
 		return
+	
+	if(E.restricted_species.len) // Check if any species are restricted
+		var/mob/living/carbon/C = src
+		var/datum/dna/dna = C.has_dna()
+		if(!(dna.species.id in E.restricted_species))
+			to_chat(src, "<span class='notice'>Your species cannot use that emote.</span>")
+			return
+
 	E.run_emote(src, param, m_type, intentional)
 
 /datum/emote/flip
@@ -165,7 +178,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /*
-	SLIME
+	SLIME (Xenobio)
 */
 /datum/emote/slime
 	mob_type_allowed_typecache = /mob/living/simple_animal/slime
@@ -224,15 +237,6 @@
 /datum/emote/slime/mood/angry
 	key = "moodangry"
 	mood = "angry"
-
-/datum/emote/sound/slime/squish
-	key = "squish"
-	key_third_person = "squishes"
-	message = "squishes."
-	message_param = "squishes at %t."
-	sound = 'sound/effects/slime_squish.ogg'
-	mob_type_allowed_typecache = list(/mob/living/carbon/human/species/jelly/slime, /mob/living/simple_animal/slime)
-
 /*
 	LIVING
 */
@@ -1040,30 +1044,35 @@ datum/emote/living/carbon
 		var/turf/T = loc
 		T.Entered(src)
 
-/datum/emote/sound/human
+/* 
+IPC
+*/
+
+/datum/emote/sound/ipc
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
+	restricted_species = list(SPECIES_ID_IPC) // For when we implement IPC
 
-/datum/emote/sound/human/buzz
+/datum/emote/sound/ipc/buzz
 	key = "buzz"
 	key_third_person = "buzzes"
 	message = "buzzes."
 	message_param = "buzzes at %t."
 	sound = 'sound/machines/buzz-sigh.ogg'
 
-/datum/emote/sound/human/buzz2
+/datum/emote/sound/ipc/buzz2
 	key = "buzz2"
 	message = "buzzes twice."
 	sound = 'sound/machines/buzz-two.ogg'
 
-/datum/emote/sound/human/ping
+/datum/emote/sound/ipc/ping
 	key = "ping"
 	key_third_person = "pings"
 	message = "pings."
 	message_param = "pings at %t."
 	sound = 'sound/machines/ping.ogg'
 
-/datum/emote/sound/human/chime
+/datum/emote/sound/ipc/chime
 	key = "chime"
 	key_third_person = "chimes"
 	message = "chimes."
@@ -1082,3 +1091,16 @@ datum/emote/living/carbon
 	message = "oogas."
 	message_param = "oogas at %t."
 	sound = 'sound/creatures/gorilla.ogg'
+
+/*
+	SLIME PERSON (Playable race slimes)
+*/
+
+/datum/emote/sound/slimeperson/squish
+	key = "squish"
+	key_third_person = "squishes"
+	message = "squishes."
+	message_param = "squishes at %t."
+	sound = 'sound/effects/slime_squish.ogg'
+	restricted_species = list(SPECIES_ID_SLIMEPERSON)
+	mob_type_allowed_typecache = /mob/living/carbon/human
