@@ -48,6 +48,7 @@
 
 	var/mob/living/simple_animal/bot/active_bot
 	var/list/botlist = list()
+	var/has_menus = FALSE
 
 /obj/item/cartridge/Initialize()
 	. = ..()
@@ -60,6 +61,7 @@
 	icon_state = "cart-e"
 	access = CART_ENGINE | CART_DRONEPHONE
 	bot_access_flags = FLOOR_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/atmos
 	name = "\improper BreatheDeep cartridge"
@@ -72,6 +74,7 @@
 	icon_state = "cart-m"
 	access = CART_MEDICAL
 	bot_access_flags = MED_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/chemistry
 	name = "\improper ChemWhiz cartridge"
@@ -84,12 +87,14 @@
 	icon_state = "cart-s"
 	access = CART_SECURITY
 	bot_access_flags = SEC_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/detective
 	name = "\improper D.E.T.E.C.T. cartridge"
 	icon_state = "cart-eye"
 	access = CART_SECURITY | CART_MEDICAL
 	bot_access_flags = SEC_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/janitor
 	name = "\improper CustodiPRO cartridge"
@@ -97,12 +102,14 @@
 	icon_state = "cart-j"
 	access = CART_JANITOR | CART_DRONEPHONE
 	bot_access_flags = CLEAN_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/lawyer
 	name = "\improper P.R.O.V.E. cartridge"
 	icon_state = "cart-law"
 	access = CART_SECURITY
 	spam_enabled = 1
+	has_menus = TRUE
 
 /* Doesnt work, no idea why
 /obj/item/cartridge/curator
@@ -140,23 +147,27 @@
 	icon_state = "cart-q"
 	access = CART_QUARTERMASTER
 	bot_access_flags = MULE_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/head
 	name = "\improper Easy-Record DELUXE cartridge"
 	icon_state = "cart-h"
 	access = CART_STATUS_DISPLAY
+	has_menus = TRUE
 
 /obj/item/cartridge/hop
 	name = "\improper HumanResources9001 cartridge"
 	icon_state = "cart-h"
 	access = CART_STATUS_DISPLAY | CART_JANITOR | CART_SECURITY | CART_QUARTERMASTER | CART_DRONEPHONE
 	bot_access_flags = MULE_BOT | CLEAN_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/hos
 	name = "\improper R.O.B.U.S.T. DELUXE cartridge"
 	icon_state = "cart-hos"
 	access = CART_STATUS_DISPLAY | CART_SECURITY
 	bot_access_flags = SEC_BOT
+	has_menus = TRUE
 
 
 /obj/item/cartridge/ce
@@ -164,18 +175,21 @@
 	icon_state = "cart-ce"
 	access = CART_STATUS_DISPLAY | CART_ENGINE | CART_ATMOS | CART_DRONEPHONE
 	bot_access_flags = FLOOR_BOT | FIRE_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/cmo
 	name = "\improper Med-U DELUXE cartridge"
 	icon_state = "cart-cmo"
 	access = CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_MEDICAL
 	bot_access_flags = MED_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/rd
 	name = "\improper Signal Ace DELUXE cartridge"
 	icon_state = "cart-rd"
 	access = CART_STATUS_DISPLAY | CART_REAGENT_SCANNER | CART_ATMOS | CART_DRONEPHONE
 	bot_access_flags = FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
+	has_menus = TRUE
 
 /obj/item/cartridge/rd/Initialize()
 	. = ..()
@@ -188,6 +202,7 @@
 	access = ~(CART_CLOWN | CART_MIME | CART_REMOTE_DOOR)
 	bot_access_flags = SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT | FIRE_BOT
 	spam_enabled = 1
+	has_menus = TRUE
 
 /obj/item/cartridge/captain/New()
 	..()
