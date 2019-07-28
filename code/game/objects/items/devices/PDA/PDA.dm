@@ -262,7 +262,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<li>[PDAIMG(notes)]<a href='byond://?src=[REF(src)];choice=41'>View Crew Manifest</a></li>"
 				dat += "</ul>"
 
-				if (cartridge)
+				if (cartridge && cartridge.has_menus)
 					dat += "<h4>Cartridge Functions</h4><ul>"
 					if (cartridge.access & CART_JANITOR)
 						dat += "<li>[PDAIMG(bucket)]<a href='byond://?src=[REF(src)];choice=49'>Custodial Locator</a></li>"
@@ -271,25 +271,16 @@ GLOBAL_LIST_EMPTY(PDAs)
 						dat += "<li>[PDAIMG(honk)]<a href='byond://?src=[REF(src)];choice=Trombone'>Sad Trombone</a></li>"						
 					if(cartridge.access & CART_STATUS_DISPLAY)
 						dat += "<li>[PDAIMG(status)]<a href='byond://?src=[REF(src)];choice=42'>Set Status Display</a></li>"
-					dat += "</ul>"
 					if (cartridge.access & CART_ENGINE)
-						dat += "<ul>"
 						dat += "<li>[PDAIMG(power)]<a href='byond://?src=[REF(src)];choice=43'>Power Monitor</a></li>"
-						dat += "</ul>"
 					if (cartridge.access & CART_MEDICAL)
-						dat += "<ul>"
 						dat += "<li>[PDAIMG(medical)]<a href='byond://?src=[REF(src)];choice=44'>Medical Records</a></li>"
 						dat += "<li>[PDAIMG(scanner)]<a href='byond://?src=[REF(src)];choice=Medical Scan'>[scanmode == 1 ? "Disable" : "Enable"] Medical Scanner</a></li>"
-						dat += "</ul>"
 					if (cartridge.access & CART_SECURITY)
-						dat += "<ul>"
 						dat += "<li>[PDAIMG(cuffs)]<a href='byond://?src=[REF(src)];choice=45'>Security Records</A></li>"
-						dat += "</ul>"
 					if(cartridge.access & CART_QUARTERMASTER)
-						dat += "<ul>"
 						dat += "<li>[PDAIMG(crate)]<a href='byond://?src=[REF(src)];choice=47'>Supply Records</A></li>"
 						dat += "<li>[PDAIMG(crate)]<a href='byond://?src=[REF(src)];choice=48'>Ore Silo Logs</a></li>"
-						dat += "</ul>"
 					dat += "</ul>"
 
 				dat += "<h4>Utilities</h4>"
