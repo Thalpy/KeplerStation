@@ -1,0 +1,4 @@
+author: "AffectedArc07"
+delete-after: True
+changes: 
+  - bugfix: "PDA will now only show cartridge functions if your cartridge has functions"
