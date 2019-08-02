@@ -31242,6 +31242,9 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
+/obj/machinery/keycard_auth{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel,
 /area/quartermaster/qm)
 "bvH" = (
@@ -39361,8 +39364,8 @@
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
 "bOm" = (
-/obj/item/bedsheet,
 /obj/structure/bed,
+/obj/item/bedsheet/medical,
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "bOn" = (
@@ -56664,6 +56667,9 @@
 /obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
+"evR" = (
+/turf/open/floor/plating,
+/area/maintenance/bar)
 "eyM" = (
 /obj/machinery/mineral/ore_redemption{
 	input_dir = 2;
@@ -56892,6 +56898,12 @@
 /obj/item/pen,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
+"ium" = (
+/mob/living/simple_animal/bot/cleanbot{
+	name = "C.L.E.A.N."
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/medbay/central)
 "izv" = (
 /obj/machinery/vending/clothing,
 /obj/machinery/light/small{
@@ -57126,12 +57138,6 @@
 	},
 /turf/open/floor/plating,
 /area/construction/mining/aux_base)
-"lKX" = (
-/mob/living/simple_animal/bot/cleanbot{
-	name = "C.L.E.A.N."
-	},
-/turf/open/floor/plasteel/white,
-/area/medical/medbay/central)
 "lMg" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -57348,6 +57354,12 @@
 	},
 /turf/open/floor/plating,
 /area/construction)
+"rMN" = (
+/obj/structure/bed,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plating,
+/area/maintenance/bar)
 "rNc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -57551,6 +57563,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
+"urE" = (
+/obj/machinery/autolathe{
+	name = "public autolathe"
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/office)
 "usO" = (
 /obj/machinery/vending/snack/random,
 /obj/machinery/light/small{
@@ -81567,7 +81585,7 @@ cNG
 cNJ
 bLF
 aZK
-bbR
+urE
 bbR
 bqt
 cBq
@@ -94162,7 +94180,7 @@ blm
 bmL
 boi
 bpw
-lKX
+ium
 bsx
 btX
 bvj
@@ -98299,7 +98317,7 @@ bRQ
 bOr
 bSQ
 bWj
-bWk
+bOm
 bXc
 bYe
 bNd
@@ -98813,7 +98831,7 @@ bRQ
 bOr
 bSQ
 bWj
-bWk
+bOm
 bXc
 bYe
 bNd

@@ -1010,6 +1010,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"aez" = (
+/obj/machinery/keycard_auth,
+/turf/closed/wall,
+/area/quartermaster/qm)
 "aeB" = (
 /obj/machinery/status_display,
 /turf/closed/wall,
@@ -127186,6 +127190,12 @@
 	dir = 1
 	},
 /area/science/circuit)
+"poI" = (
+/obj/structure/bed,
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plating,
+/area/crew_quarters/abandoned_gambling_den)
 "psi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bodycontainer/morgue{
@@ -151646,11 +151656,11 @@ dlc
 dmn
 djm
 fow
-aad
-aad
-aad
-aad
-aad
+dod
+dod
+poI
+dfY
+ajr
 aad
 aad
 aad
@@ -174433,7 +174443,7 @@ aaa
 aaa
 aad
 aQQ
-aQQ
+aez
 aUp
 aVY
 aXE
@@ -178350,7 +178360,7 @@ cLa
 cMx
 cIi
 cPR
-cRs
+cFz
 cDG
 cUW
 cAw
