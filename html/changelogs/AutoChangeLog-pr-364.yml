@@ -1,0 +1,6 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - tweak: "[Omega] Trash bin in robotics has moved slightly."
+  - bugfix: "[Omega] Double door between robotics and toxins has been fixed."
+  - bugfix: "[Omega] Window shutters in AI Sat should work now."
