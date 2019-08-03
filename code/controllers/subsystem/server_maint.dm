@@ -60,5 +60,6 @@ SUBSYSTEM_DEF(server_maint)
 	var/tgsversion = world.TgsVersion()
 	if(tgsversion)
 		SSblackbox.record_feedback("text", "server_tools", 1, tgsversion)
+	parse_server_logs() // KEPLER CHANGE - Parse round logs
 
 #undef PING_BUFFER_TIME
