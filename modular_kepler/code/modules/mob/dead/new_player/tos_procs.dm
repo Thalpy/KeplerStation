@@ -5,13 +5,16 @@
 	var/accepted = FALSE // This var exists just so I can qdel the query properly
 	if(!GLOB.server_tos) // Say yes if there is no TOS
 		accepted = TRUE
+		return TRUE
 
 	if(!SSdbcore.IsConnected()) // Say yes if we cant load the DB
 		accepted = TRUE
+		return TRUE
 
 	var/datum/DBQuery/check_consent = SSdbcore.NewQuery("SELECT * FROM [format_table_name("tos")] WHERE ckey='[src.ckey]' AND consent=1")
 	if(!check_consent.warn_execute())
 		accepted = TRUE // Say yes if the query failed
+		return TRUE
 	while(check_consent.NextRow())
 		accepted = TRUE
 		
