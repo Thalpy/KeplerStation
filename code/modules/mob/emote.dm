@@ -1,6 +1,10 @@
 //Defines. You must use the species ID and not the species path, otherwise it dont work
 #define SPECIES_ID_SLIMEPERSON	"slimeperson"
 #define SPECIES_ID_IPC			"ipc"
+#define SPECIES_ID_JELLYPERSON	"jelly"
+#define SPECIES_ID_LUMINESCENT	"lum"
+#define SPECIES_ID_SLIME		"slime"
+#define SPECIES_ID_STARGAZER	"stargazer"
 
 
 //The code execution of the emote datum is located at code/datums/emotes.dm
@@ -1102,5 +1106,5 @@ IPC
 	message = "squishes."
 	message_param = "squishes at %t."
 	sound = 'sound/effects/slime_squish.ogg'
-	restricted_species = list(SPECIES_ID_SLIMEPERSON)
+	restricted_species = list(SPECIES_ID_SLIMEPERSON, SPECIES_ID_JELLYPERSON, SPECIES_ID_LUMINESCENT, SPECIES_ID_SLIME, SPECIES_ID_STARGAZER) // All varients of xenobio people-slimes
 	mob_type_allowed_typecache = /mob/living/carbon/human
