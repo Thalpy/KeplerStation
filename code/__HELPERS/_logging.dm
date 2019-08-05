@@ -262,20 +262,3 @@
 	else if(A.loc)
 		return "(UNKNOWN (?, ?, ?))"
 
-/* KEPLER CHANGE: Parse all server logs to remove data such as IPs and CIDs. */
-/proc/parse_server_logs()
-	if(IsAdminAdvancedProcCall())
-		to_chat(usr, "<span class='notice'><b>ERROR:</b> This proc can only be called by the server on restart.</span>")
-		return
-	if(!CONFIG_GET(flag/logparse_enable))
-		return // Kill this ASAP if its not enabled so world can reboot
-	if(!CONFIG_GET(string/logparse_parser_executable))
-		return // Kill this ASAP if its missing args so world can reboot
-	if(!CONFIG_GET(string/logparse_server_basedir))
-		return // Kill this ASAP if its missing args so world can reboot
-	if(!CONFIG_GET(string/logparse_output_dir))
-		return // Kill this ASAP if its missing args so world can reboot
-	
-	var/command = "\"[CONFIG_GET(string/logparse_parser_executable)]\" \"[CONFIG_GET(string/logparse_server_basedir)]/[GLOB.log_directory]\" \"[CONFIG_GET(string/logparse_output_dir)]\""
-	// Command will do something like this: "C:/path/to/LogParser.exe" "C:/server/root/data/logs/2019/07/12/round-13.46.45" "C:/Logs/Output" 
-	shell(command)
