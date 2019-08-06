@@ -1,5 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - tweak: "Mentorwho and adminwho have been merged into adminwho"
-  - tweak: "Admins and mentors now highlight in who instead of being in a seperate categorey"
