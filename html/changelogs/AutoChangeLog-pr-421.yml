@@ -1,4 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - bugfix: "When in combat mode, your character faces your mouse cursor again"
