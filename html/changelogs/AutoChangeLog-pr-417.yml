@@ -1,0 +1,4 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - bugfix: "fixes a few bad touchs on combat mode pushing."
