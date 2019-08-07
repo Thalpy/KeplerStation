@@ -468,26 +468,3 @@ DISABLE_HIGH_POP_MC_MODE_AMOUNT 60
 ##	For reference, Goonstation uses a resolution of 21x15 for it's widescreen mode.
 ##	Do note that changing this value will affect the title screen. The title screen will have to be updated manually if this is changed.
 DEFAULT_VIEW 21x15
-
-#######################################
-# Automatic Log Parsing Configuration #
-#######################################
-## If you have an external script to parse game logs, configure it here. If not, do not configure anything here, as it will cause unnecassary shell() calls
-## Not only will this halt execution since shell() is blocking, but incorrectly configuring shell calls can cause unintended behaviour
-## Do NOT include speech marks in paths, the code has them in place properly
-## Do NOT use \, you MUST use / to avoid weird escape issues
-## YOU HAVE BEEN WARNED
-
-
-## Uncomment to end-round log parsing
-#LOGPARSE_ENABLE
-
-## Uncomment and put the ABSOLUTE PATH to your logparse exectuable (C:/Extra Programs/LogParser/LogParser.exe)
-#LOGPARSE_PARSER_EXECUTABLE C:/Path/To/LogParser.exe
-
-## Uncomment and put the ABSOLUTE PATH to your servers static config directory (data/logs will be appended after).
-## YOU MUST NOT PUT A TRAILING / ON THE END!!!!!!!!!!!
-#LOGPARSE_SERVER_BASEDIR C:/Server/Basepath
-
-## Uncomment and put the ABSOLUTE PATH to the directory where you want your server logs to end up
-#LOGPARSE_OUTPUT_DIR C:/Website/Logs
