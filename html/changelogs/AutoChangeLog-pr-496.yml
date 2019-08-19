@@ -1,5 +1,0 @@
-author: "Alonefromhell"
-delete-after: True
-changes: 
-  - rscdel: "Removed the ability to be nameless"
-  - bugfix: "\"non-binary\" and \"object\" genders are no longer selectable."
