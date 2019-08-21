@@ -1,0 +1,5 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - balance: "storage tweaks for belt briefcase"
+  - imageadd: "codersprite for belt briefcase"
