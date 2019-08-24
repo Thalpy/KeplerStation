@@ -1,5 +1,0 @@
-author: "CornMyCob"
-delete-after: True
-changes: 
-  - rscadd: "Transparency variable in species code"
-  - tweak: "Slimes are less ugly now"
