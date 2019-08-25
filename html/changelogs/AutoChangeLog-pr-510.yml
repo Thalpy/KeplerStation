@@ -1,4 +1,0 @@
-author: "AffectedArc07"
-delete-after: True
-changes: 
-  - bugfix: "Wallets now show up if you put an ID in them"
