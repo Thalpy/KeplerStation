@@ -1,5 +1,0 @@
-author: "KeplerStation-Bot"
-delete-after: True
-changes: 
-  - rscadd: "added pharaoh gear to chaplain vendor"
-  - spellcheck: "fixed typos in pharaoh items"
