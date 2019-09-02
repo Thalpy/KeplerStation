@@ -12236,7 +12236,7 @@
 /turf/open/floor/plasteel,
 /area/ai_monitored/storage/eva)
 "aCh" = (
-/obj/machinery/vending/autodrobe,
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/white/side{
 	dir = 4
 	},
@@ -42629,11 +42629,6 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/medical/virology)
-"bWk" = (
-/obj/structure/bed,
-/obj/item/bedsheet,
-/turf/open/floor/plasteel/white,
-/area/medical/virology)
 "bWl" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -56667,9 +56662,6 @@
 /obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
-"evR" = (
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "eyM" = (
 /obj/machinery/mineral/ore_redemption{
 	input_dir = 2;
@@ -57193,7 +57185,7 @@
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
 "nfm" = (
-/obj/machinery/vending/autodrobe,
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "noK" = (
@@ -57354,12 +57346,6 @@
 	},
 /turf/open/floor/plating,
 /area/construction)
-"rMN" = (
-/obj/structure/bed,
-/obj/item/tank/internals/anesthetic,
-/obj/item/clothing/mask/breath,
-/turf/open/floor/plating,
-/area/maintenance/bar)
 "rNc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6

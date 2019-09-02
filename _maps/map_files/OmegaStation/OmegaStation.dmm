@@ -15949,7 +15949,6 @@
 	},
 /area/crew_quarters/theatre)
 "aBX" = (
-/obj/machinery/vending/autodrobe,
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
@@ -15976,6 +15975,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/theatre)
 "aBY" = (
@@ -17480,9 +17480,6 @@
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/dorms)
 "aEN" = (
-/obj/machinery/vending/autodrobe{
-	req_access_txt = "0"
-	},
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 26
 	},
@@ -17501,6 +17498,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/dorms)
 "aEO" = (
@@ -30026,15 +30024,13 @@
 /turf/open/floor/plasteel,
 /area/maintenance/port)
 "bbn" = (
-/obj/machinery/vending/autodrobe{
-	req_access_txt = "0"
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
 /area/maintenance/port)
 "bbp" = (

@@ -19803,10 +19803,10 @@
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/theatre)
 "aVm" = (
-/obj/machinery/vending/autodrobe,
 /obj/machinery/computer/security/telescreen/entertainment{
 	pixel_y = 32
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/theatre)
 "aVn" = (
