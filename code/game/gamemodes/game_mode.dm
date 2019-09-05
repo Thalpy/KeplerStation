@@ -350,8 +350,8 @@
 /datum/game_mode/proc/get_players_for_role(role)
 	var/list/players = list()
 	var/list/candidates = list()
-	var/list/drafted = list()
-	var/datum/mind/applicant = null
+	//var/list/drafted = list() | Kepler Change: Remove Drafting
+	//var/datum/mind/applicant = null | Kepler Change: Remove Drafting
 
 	// Ultimate randomizing code right here
 	for(var/mob/dead/new_player/player in GLOB.player_list)
@@ -375,6 +375,7 @@
 				if(player.assigned_role == job)
 					candidates -= player
 
+	/* KEPLER CHANGE: Remove antag drafting. If someone doesnt want to be antag, why are we lumping them into it.
 	if(candidates.len < recommended_enemies)
 		for(var/mob/dead/new_player/player in players)
 			if(player.client && player.ready == PLAYER_READY_TO_PLAY)
@@ -417,6 +418,9 @@
 
 		else												// Not enough scrubs, ABORT ABORT ABORT
 			break
+	*/
+
+	candidates = shuffle(candidates) // Lets shuffle, just one last time
 
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than recommended_enemies
 							//			recommended_enemies if the number of people with that role set to yes is less than recomended_enemies,
