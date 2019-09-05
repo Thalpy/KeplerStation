@@ -20186,7 +20186,6 @@
 /turf/open/floor/plasteel,
 /area/crew_quarters/theatre)
 "aOx" = (
-/obj/machinery/vending/autodrobe,
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
@@ -20209,6 +20208,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel,
 /area/crew_quarters/theatre)
 "aOy" = (
@@ -24706,12 +24706,12 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/theatre)
 "aVj" = (
-/obj/machinery/vending/autodrobe,
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -22
 	},
 /obj/machinery/light,
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/cafeteria,
 /area/crew_quarters/theatre)
 "aVk" = (
@@ -110982,12 +110982,10 @@
 /turf/open/floor/plating,
 /area/crew_quarters/theatre/abandoned)
 "dFl" = (
-/obj/machinery/vending/autodrobe{
-	req_access_txt = "0"
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plating,
 /area/crew_quarters/theatre/abandoned)
 "dFm" = (
@@ -127181,9 +127179,6 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/dark,
 /area/chapel/office)
-"nyN" = (
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "nSh" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /turf/closed/wall/r_wall,
@@ -127535,10 +127530,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/port/aft)
-"vhA" = (
-/obj/item/clothing/under/color/grey,
-/turf/open/floor/plating,
-/area/crew_quarters/abandoned_gambling_den)
 "vAb" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4

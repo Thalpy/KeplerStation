@@ -46445,7 +46445,7 @@
 /turf/open/floor/wood,
 /area/crew_quarters/theatre)
 "bLS" = (
-/obj/machinery/vending/autodrobe,
+/obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/wood,
 /area/crew_quarters/theatre)
 "bLT" = (
