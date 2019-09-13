@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - config: "config files have been moved into an example folder."
