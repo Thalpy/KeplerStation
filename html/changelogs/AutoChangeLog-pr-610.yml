@@ -1,6 +1,0 @@
-author: "Shadeykins"
-delete-after: True
-changes: 
-  - rscadd: "Horizons lawset"
-  - rscdel: "AsimovPP, Paladin5e, Trump, Thermodynamic, Hippocratic, Live and Let Live, Guardian, and Peacekeeper."
-  - tweak: "Corporate, Quarantine"
