@@ -20,7 +20,6 @@
 	access = list() 			//See get_access()
 	minimal_access = list() 	//See get_access()
 
-	mind_traits = list(TRAIT_CAPTAIN_METABOLISM)
 //	mind_traits = list(TRAIT_DISK_VERIFIER)
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
@@ -32,7 +31,7 @@
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.nameless ? "" : "[H.real_name] "]on deck!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.real_name] on deck!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
