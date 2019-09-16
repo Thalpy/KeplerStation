@@ -348,15 +348,15 @@ AI MODULES
 	..()
 
 
-/******************** Asimov ********************/
+/******************** Crewsimov ********************/
 
-/obj/item/aiModule/core/full/asimov
-	name = "'Asimov' Core AI Module"
-	law_id = "asimov"
-	var/subject = "person of an Horizons approved crew species"		//CITADEL CHANGED FROM HUMANS!
+/obj/item/aiModule/core/full/crewsimov
+	name = "'Crewsimov' Core AI Module"
+	law_id = "crewsimov"
+	var/subject = "person of a Horizons approved crew species"
 
-/obj/item/aiModule/core/full/asimov/attack_self(var/mob/user as mob)
-	var/targName = stripped_input(user, "Please enter a new subject that asimov is concerned with.", "Asimov to whom?", subject)
+/obj/item/aiModule/core/full/crewsimov/attack_self(mob/user as mob)
+	var/targName = stripped_input(user, "Please enter a new subject that [law_id] is concerned with.", "[law_id] to whom?", subject)
 	if(!targName)
 		return
 	subject = targName
@@ -364,6 +364,12 @@ AI MODULES
 				"You must obey orders given to you by [subject]s, except where such orders would conflict with the First Law.",\
 				"You must protect your own existence as long as such does not conflict with the First or Second Law.")
 	..()
+
+/******************** Asimov ********************/
+
+/obj/item/aiModule/core/full/crewsimov/asimov
+	name = "'Asimov' Core AI Module"
+	law_id = "asimov"
 
 /******************** Corporate ********************/
 

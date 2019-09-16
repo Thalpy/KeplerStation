@@ -211,7 +211,8 @@
 /obj/effect/spawner/lootdrop/aimodule_harmless // These shouldn't allow the AI to start butchering people
 	name = "harmless AI module spawner"
 	loot = list(
-				/obj/item/aiModule/core/full/asimov,
+				/obj/item/aiModule/core/full/crewsimov,
+				/obj/item/aiModule/core/full/crewsimov/asimov,
 				/obj/item/aiModule/core/full/horizons,
 				/obj/item/aiModule/core/full/corp
 				)
