@@ -21,17 +21,6 @@
 	age = rand(AGE_MIN,AGE_MAX)
 
 /datum/preferences/proc/update_preview_icon()
-<<<<<<< HEAD
-	// Silicons only need a very basic preview since there is no customization for them.
-	if(job_engsec_high)
-		switch(job_engsec_high)
-			if(AI_JF)
-				parent.show_character_previews(image('icons/mob/ai.dmi', resolve_ai_icon(preferred_ai_core_display), dir = SOUTH))
-				return
-			if(CYBORG)
-				parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
-				return
-=======
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
 	var/highest_pref = 0
@@ -48,7 +37,6 @@
 		if(istype(previewJob,/datum/job/cyborg))
 			parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
 			return
->>>>>>> 5a58ac687... Merge pull request #9027 from Poojawa/job-menu-improvements
 
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
