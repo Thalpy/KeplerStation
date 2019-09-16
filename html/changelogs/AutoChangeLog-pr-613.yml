@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - rscdel: "Removed the Subtler emote. Use the normal Subtle instead."
