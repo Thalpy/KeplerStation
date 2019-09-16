@@ -45,13 +45,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	return
 
 /datum/preferences/proc/update_character(current_version, savefile/S)
-<<<<<<< HEAD
-	return
-=======
-	if(current_version < 19)
-		pda_style = "mono"
-	if(current_version < 20)
-		pda_color = "#808000"
 	if(current_version < 21)
 		job_preferences = list() //It loaded null from nonexistant savefile field.
 		var/job_civilian_high = 0
@@ -105,7 +98,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 						new_value = JP_LOW
 			if(new_value)
 				job_preferences[initial(J.title)] = new_value
->>>>>>> 5a58ac687... Merge pull request #9027 from Poojawa/job-menu-improvements
 
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
