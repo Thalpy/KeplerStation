@@ -1,0 +1,6 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - rscadd: "Added Crewsimov lawset."
+  - tweak: "Crewsimov is now the standard lawset."
+  - config: "Crewsimov addition, and standard."
