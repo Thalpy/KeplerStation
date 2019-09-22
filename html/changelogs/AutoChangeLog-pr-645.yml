@@ -1,0 +1,6 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - rscadd: "fun"
+  - rscdel: "bad stuff"
+  - balance: "mech bad"
