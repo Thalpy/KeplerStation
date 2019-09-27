@@ -1,0 +1,4 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - tweak: "Blood cult altar, forge and archives now use radial menus."
