@@ -770,7 +770,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/available_in_days = job.available_in_days(user.client)
 				HTML += "<font color=red>[rank]</font></td><td><font color=red> \[IN [(available_in_days)] DAYS\]</font></td></tr>"
 				continue
+<<<<<<< HEAD
 			if((job_civilian_low & overflow.flag) && (rank != SSjob.overflow_role) && !jobban_isbanned(user, SSjob.overflow_role))
+=======
+			if(!user.client.prefs.pref_species.qualifies_for_rank(rank, user.client.prefs.features))
+				if(user.client.prefs.pref_species.id == "human")
+					HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[MUTANT\]</b></font></td></tr>"
+				else
+					HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[NON-HUMAN\]</b></font></td></tr>"
+				continue
+			if((job_preferences["[SSjob.overflow_role]"] == JP_LOW) && (rank != SSjob.overflow_role) && !jobban_isbanned(user, SSjob.overflow_role))
+>>>>>>> a0f5fcbbe... Merge pull request #9352 from JTGSZ/bugfix
 				HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 				continue
 			if((rank in GLOB.command_positions) || (rank == "AI"))//Bold head jobs
