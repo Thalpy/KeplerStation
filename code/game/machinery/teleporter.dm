@@ -68,14 +68,16 @@
 	if (ismovableatom(M))
 		if(do_teleport(M, com.target, channel = TELEPORT_CHANNEL_BLUESPACE))
 			use_power(5000)
-
-			if(!calibrated && iscarbon(M) && prob(0 - ((accurate) * 0))) //oh dear a problem
+			
+			/*KEPLER CHANGE: Removes flyperson chance
+			if(!calibrated && iscarbon(M) && prob(30 - ((accurate) * 10))) //oh dear a problem
 				var/mob/living/carbon/C = M
 				if(C.dna?.species && C.dna.species.id != "fly" && !HAS_TRAIT(C, TRAIT_RADIMMUNE))
 					to_chat(C, "<span class='italics'>You hear a buzzing in your ears.</span>")
 					C.set_species(/datum/species/fly)
 					log_game("[C] ([key_name(C)]) was turned into a fly person")
-					C.apply_effect((rand(0 - accurate * 0, 0 - accurate * 0)), EFFECT_IRRADIATE, 0)
+					C.apply_effect((rand(120 - accurate * 40, 180 - accurate * 60)), EFFECT_IRRADIATE, 0)
+			*/
 
 			calibrated = FALSE
 	return
