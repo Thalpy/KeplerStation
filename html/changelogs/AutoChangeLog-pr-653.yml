@@ -1,0 +1,4 @@
+author: "EldritchSigma"
+delete-after: True
+changes: 
+  - tweak: "Flyperson transformation on teleport has been changed to a probability of zero."
