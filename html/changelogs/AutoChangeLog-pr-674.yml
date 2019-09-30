@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - rscadd: "Start Round admin verb now has a confirmation box"
