@@ -45,8 +45,4 @@
 	strip_delay = 80
 	equip_delay_other = 80
 	resistance_flags = NONE
-<<<<<<< HEAD
-=======
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //rated for cosmic radation :honk:
-	tauric = TRUE		//Citadel Add for tauric hardsuits
->>>>>>> 250c6ed98... Merge pull request #9367 from Poojawa/totally-radical
