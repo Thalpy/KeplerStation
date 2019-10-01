@@ -148,9 +148,4 @@
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
 	resistance_flags = NONE
-<<<<<<< HEAD
-	rad_flags = RAD_PROTECT_CONTENTS
-=======
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-	tauric = TRUE		//Citadel Add for tauric hardsuits
->>>>>>> 250c6ed98... Merge pull request #9367 from Poojawa/totally-radical
