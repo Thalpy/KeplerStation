@@ -1,4 +1,0 @@
-author: "Alonefromhell"
-delete-after: True
-changes: 
-  - bugfix: "using '!' at the start of Say now emotes everything after it, instead of '*'."
