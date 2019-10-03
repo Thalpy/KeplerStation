@@ -1,0 +1,4 @@
+author: "Alonefromhell"
+delete-after: True
+changes: 
+  - bugfix: "Species like plasmaman and slimepeople can no longer choose Acute Blood Deficiency for free quirk points."
