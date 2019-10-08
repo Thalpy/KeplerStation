@@ -1,7 +1,3 @@
-//Due to how large this one is it gets its own file
-/*
-Chaplain
-*/
 /datum/job/chaplain
 	title = "Chaplain"
 	flag = CHAPLAIN
@@ -17,6 +13,8 @@ Chaplain
 
 	access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
 	minimal_access = list(ACCESS_MORGUE, ACCESS_CHAPEL_OFFICE, ACCESS_CREMATORIUM, ACCESS_THEATRE)
+	
+	display_order = JOB_DISPLAY_ORDER_CHAPLAIN
 
 /datum/job/chaplain/after_spawn(mob/living/H, mob/M)
 	. = ..()
@@ -89,6 +87,7 @@ Chaplain
 	jobtype = /datum/job/chaplain
 
 	pda_slot = /obj/item/pda/chaplain
+	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/chaplain
 	backpack_contents = list(/obj/item/camera/spooky = 1)
 	backpack = /obj/item/storage/backpack/cultpack

@@ -1,5 +1,5 @@
 /datum/job
-	//The name of the job
+	//The name of the job , used for preferences, bans and more. Make sure you know what you're doing before changing this.
 	var/title = "NOPE"
 
 	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
@@ -13,8 +13,9 @@
 	var/list/head_announce = null
 
 	//Bitflags for the job
-	var/flag = 0
-	var/department_flag = 0
+	var/flag = NONE //Deprecated
+	var/department_flag = NONE //Deprecated
+//	var/auto_deadmin_role_flags = NONE
 
 	//Players will be allowed to spawn in as jobs that are set to "Station"
 	var/faction = "None"
@@ -38,6 +39,7 @@
 	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
 	var/req_admin_notify
 
+	// This is for Citadel specific tweaks to job notices.
 	var/custom_spawn_text
 
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
@@ -55,8 +57,9 @@
 	var/antag_rep = 10
 
 	var/list/mind_traits // Traits added to the mind of the mob assigned this job
-
 	var/list/blacklisted_quirks		//list of quirk typepaths blacklisted.
+
+	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
@@ -83,14 +86,14 @@
 		return antag_rep
 
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
-/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null)
+/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
 	if(!H)
 		return FALSE
 
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
-			H.apply_pref_name("human", H.client)
+			H.apply_pref_name("human", preference_source)
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -134,10 +137,10 @@
 		return 0
 	if(!CONFIG_GET(flag/use_age_restriction_for_jobs))
 		return 0
+	if(!SSdbcore.Connect())
+		return 0 //Without a database connection we can't get a player's age so we'll assume they're old enough for all jobs
 	if(C.prefs.db_flags & DB_FLAG_EXEMPT)
 		return 0
-	if(!isnum(C.player_age))
-		return 0 //This is only a number if the db connection is established, otherwise it is text: "Requires database", meaning these restrictions cannot be enforced
 	if(!isnum(minimal_player_age))
 		return 0
 
@@ -149,6 +152,8 @@
 /datum/job/proc/map_check()
 	return TRUE
 
+/datum/job/proc/radio_help_message(mob/M)
+	to_chat(M, "<b>Prefix your message with :h to speak on your department's radio. To see other prefixes, look closely at your headset.</b>")
 
 /datum/outfit/job
 	name = "Standard Gear"
@@ -161,11 +166,11 @@
 	pda_slot = /obj/item/pda
 	back = /obj/item/storage/backpack
 	shoes = /obj/item/clothing/shoes/sneakers/black
+	box = /obj/item/storage/box/survival
 
 	var/backpack = /obj/item/storage/backpack
 	var/satchel  = /obj/item/storage/backpack/satchel
 	var/duffelbag = /obj/item/storage/backpack/duffelbag
-	var/box = /obj/item/storage/box/survival
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
@@ -183,12 +188,6 @@
 			back = duffelbag //Department duffel bag
 		else
 			back = backpack //Department backpack
-
-	if(box)
-		if(!backpack_contents)
-			backpack_contents = list()
-		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
-		backpack_contents[box] = 1
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -220,3 +219,9 @@
 	types += satchel
 	types += duffelbag
 	return types
+
+//Warden and regular officers add this result to their get_access()
+/datum/job/proc/check_config_for_sec_maint()
+	if(CONFIG_GET(flag/security_has_maint_access))
+		return list(ACCESS_MAINT_TUNNELS)
+	return list()
