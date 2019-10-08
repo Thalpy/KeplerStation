@@ -408,9 +408,7 @@
 		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 		announcer.announce("CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
 		visible_message("<span class='notice'>\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
-
-<<<<<<< HEAD:modular_citadel/code/game/machinery/cryopod.dm
-
+		
 	for(var/obj/item/W in mob_occupant.GetAllContents())
 		if(W.loc.loc && (( W.loc.loc == loc ) || (W.loc.loc == control_computer)))
 			continue//means we already moved whatever this thing was in
@@ -434,8 +432,6 @@
 		R.contents -= R.mmi
 		qdel(R.mmi)
 
-=======
->>>>>>> de117afd8... Merge pull request #9410 from Poojawa/cryopod-tweaks:code/game/machinery/cryopod.dm
 	// Ghost and delete the mob.
 	if(!mob_occupant.get_ghost(1))
 		mob_occupant.ghostize(0) // Players who cryo out may not re-enter the round
