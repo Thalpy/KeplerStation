@@ -96,10 +96,7 @@
 					CLONE:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=clone' id='clone'>[M.getCloneLoss()]</a>
 					BRAIN:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=brain' id='brain'>[M.getOrganLoss(ORGAN_SLOT_BRAIN)]</a>
 					STAMINA:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=stamina' id='stamina'>[M.getStaminaLoss()]</a>
-<<<<<<< HEAD
 				</font>
-=======
-					AROUSAL:<font size='1'><a href='?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=arousal' id='arousal'>[M.getArousalLoss()]</a>
 					"}
 			if(GLOB.Debug2)
 				atomsnowflake += {"
@@ -114,7 +111,6 @@
 					"}
 			atomsnowflake += {"
 			</font>
->>>>>>> 0073d99a2... Merge pull request #9309 from Thalpy/tg-Organ-port
 			"}
 		else
 			atomsnowflake += "<a href='?_src_=vars;[HrefToken()];datumedit=[refid];varnameedit=name'><b id='name'>[D]</b></a>"
@@ -1359,11 +1355,6 @@
 				if("stamina")
 					L.adjustStaminaLoss(amount)
 					newamt = L.getStaminaLoss()
-<<<<<<< HEAD
-=======
-				if("arousal")
-					L.adjustArousalLoss(amount)
-					newamt = L.getArousalLoss()
 				if("heart")
 					L.adjustOrganLoss(ORGAN_SLOT_HEART, amount)
 					newamt = L.getOrganLoss(ORGAN_SLOT_HEART)
@@ -1388,7 +1379,6 @@
 				if("appendix")
 					L.adjustOrganLoss(ORGAN_SLOT_APPENDIX, amount)
 					newamt = L.getOrganLoss(ORGAN_SLOT_APPENDIX)
->>>>>>> 0073d99a2... Merge pull request #9309 from Thalpy/tg-Organ-port
 				else
 					to_chat(usr, "You caused an error. DEBUG: Text:[Text] Mob:[L]")
 					return

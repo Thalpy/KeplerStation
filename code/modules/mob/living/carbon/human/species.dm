@@ -1664,13 +1664,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				H.adjustStaminaLoss(damage * hit_percent * H.physiology.stamina_mod)
 		if(BRAIN)
-<<<<<<< HEAD
-			H.adjustBrainLoss(damage * hit_percent * H.physiology.brain_mod)
-=======
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, damage * hit_percent * H.physiology.brain_mod)
-		if(AROUSAL)											//Citadel edit - arousal
-			H.adjustArousalLoss(damage * hit_percent)
->>>>>>> 0073d99a2... Merge pull request #9309 from Thalpy/tg-Organ-port
 	return 1
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)

@@ -122,12 +122,8 @@
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
 #define ORGAN_SLOT_TAIL "tail"
-<<<<<<< HEAD
-=======
-#define ORGAN_SLOT_PENIS "penis"
 
 ////organ defines
 #define STANDARD_ORGAN_THRESHOLD 	100
 #define STANDARD_ORGAN_HEALING 		0.001
 #define STANDARD_ORGAN_DECAY		0.00222		//designed to fail organs when left to decay for ~15 minutes
->>>>>>> 0073d99a2... Merge pull request #9309 from Thalpy/tg-Organ-port

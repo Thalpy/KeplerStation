@@ -40,14 +40,9 @@
 					update_damage_overlays()
 			else
 				adjustStaminaLoss(damage * hit_percent)
-<<<<<<< HEAD
 		if(BRAIN)
-			adjustBrainLoss(damage * hit_percent)
-=======
-		//citadel code
-		if(AROUSAL)
-			adjustArousalLoss(damage * hit_percent)
->>>>>>> 0073d99a2... Merge pull request #9309 from Thalpy/tg-Organ-port
+			adjustOrganLoss(ORGAN_SLOT_BRAIN, damage * hit_percent)
+
 	return TRUE
 
 
