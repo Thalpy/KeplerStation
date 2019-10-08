@@ -92910,10 +92910,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "cZK" = (
-/obj/item/twohanded/required/kirbyplants/random,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/body_scanner,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "cZL" = (
@@ -127518,6 +127518,10 @@
 /obj/effect/decal/remains/xeno,
 /turf/open/floor/engine/vacuum,
 /area/science/mixing)
+"sko" = (
+/obj/machinery/smartfridge/organ,
+/turf/closed/wall,
+/area/medical/surgery)
 "svv" = (
 /obj/machinery/door/poddoor/incinerator_toxmix,
 /turf/open/floor/engine/vacuum,
@@ -175528,7 +175532,7 @@ dnF
 dsM
 dma
 dvD
-dma
+sko
 dma
 dma
 dBr

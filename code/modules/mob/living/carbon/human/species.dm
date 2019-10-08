@@ -1614,7 +1614,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					append_message = "loosening their grip on [target_held_item]"
 			log_combat(user, target, "shoved", append_message)
 */
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, break_modifier = 1)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(hit_percent <= 0)
@@ -1640,14 +1640,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			if(BP)
-				if(damage > 0 ? BP.receive_damage(damage * hit_percent * brutemod * H.physiology.brute_mod, 0) : BP.heal_damage(abs(damage * hit_percent * brutemod * H.physiology.brute_mod), 0))
+				if(damage > 0 ? BP.receive_damage(damage * hit_percent * brutemod * H.physiology.brute_mod, 0, break_modifier = break_modifier) : BP.heal_damage(abs(damage * hit_percent * brutemod * H.physiology.brute_mod), 0))
 					H.update_damage_overlays()
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage * hit_percent * brutemod * H.physiology.brute_mod)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			if(BP)
-				if(damage > 0 ? BP.receive_damage(0, damage * hit_percent * burnmod * H.physiology.burn_mod) : BP.heal_damage(0, abs(damage * hit_percent * burnmod * H.physiology.burn_mod)))
+				if(damage > 0 ? BP.receive_damage(0, damage * hit_percent * burnmod * H.physiology.burn_mod, break_modifier = break_modifier) : BP.heal_damage(0, abs(damage * hit_percent * burnmod * H.physiology.burn_mod)))
 					H.update_damage_overlays()
 			else
 				H.adjustFireLoss(damage * hit_percent * burnmod * H.physiology.burn_mod)
@@ -1664,7 +1664,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			else
 				H.adjustStaminaLoss(damage * hit_percent * H.physiology.stamina_mod)
 		if(BRAIN)
-			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, damage * hit_percent * H.physiology.brain_mod)
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, (damage * hit_percent * H.physiology.brain_mod))
 	return 1
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)

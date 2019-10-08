@@ -36016,6 +36016,7 @@
 /area/crew_quarters/heads/cmo)
 "bFF" = (
 /obj/machinery/light,
+/obj/machinery/body_scanner,
 /turf/open/floor/plasteel/white,
 /area/medical/sleeper)
 "bFG" = (
@@ -57005,6 +57006,13 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/plasteel,
 /area/science/circuit)
+"fLi" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/smartfridge/organ,
+/turf/closed/wall,
+/area/medical/sleeper)
 "fTg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -93215,7 +93223,7 @@ bvj
 bvj
 bvj
 bvj
-bvd
+fLi
 bFu
 bvj
 bvj

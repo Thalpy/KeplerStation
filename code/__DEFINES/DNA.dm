@@ -98,6 +98,7 @@
 #define NOEYES			16
 #define MARKINGS		17
 #define TRANSPARENT_BODY 18
+#define NO_BONES		19
 
 //organ slots
 #define ORGAN_SLOT_BRAIN "brain"
