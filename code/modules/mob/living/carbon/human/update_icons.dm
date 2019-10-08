@@ -76,6 +76,7 @@ There are several things that need to be remembered:
 		update_hair()
 		update_inv_w_uniform()
 		update_inv_wear_id()
+		update_inv_wear_pda() // KEPLER CHANGE: PDA Slots
 		update_inv_gloves()
 		update_inv_glasses()
 		update_inv_ears()
@@ -123,15 +124,16 @@ There are several things that need to be remembered:
 			if(U.adjusted == ALT_STYLE)
 				t_color = "[t_color]_d"
 
-		if(U.mutantrace_variation)
-			if(U.suit_style == DIGITIGRADE_SUIT_STYLE)
-				U.alternate_worn_icon = 'modular_citadel/icons/mob/uniform_digi.dmi'
-				if(U.adjusted == ALT_STYLE)
-					t_color = "[t_color]_d_l"
-				else if(U.adjusted == NORMAL_STYLE)
-					t_color = "[t_color]_l"
-			else
-				U.alternate_worn_icon = null
+		if(!U.force_alternate_icon)
+			if(U.mutantrace_variation)
+				if(U.suit_style == DIGITIGRADE_SUIT_STYLE)
+					U.alternate_worn_icon = 'modular_citadel/icons/mob/uniform_digi.dmi'
+					if(U.adjusted == ALT_STYLE)
+						t_color = "[t_color]_d_l"
+					else if(U.adjusted == NORMAL_STYLE)
+						t_color = "[t_color]_l"
+				else
+					U.alternate_worn_icon = null
 
 		var/mutable_appearance/uniform_overlay
 
@@ -388,8 +390,8 @@ There are several things that need to be remembered:
 				client.screen += wear_suit
 		update_observer_view(wear_suit,1)
 
-		if(S.mutantrace_variation) //Just make sure we've got this checked too
-			S.alternate_worn_icon = null
+		if(!S.force_alternate_icon)
+			S.alternate_worn_icon = 'modular_citadel/icons/mob/suit_digi.dmi'
 
 		overlays_standing[SUIT_LAYER] = S.build_worn_icon(state = wear_suit.icon_state, default_layer = SUIT_LAYER, default_icon_file = ((wear_suit.alternate_worn_icon) ? S.alternate_worn_icon : 'icons/mob/suit.dmi'))
 		var/mutable_appearance/suit_overlay = overlays_standing[SUIT_LAYER]
@@ -404,6 +406,17 @@ There are several things that need to be remembered:
 
 	apply_overlay(SUIT_LAYER)
 
+// KEPLER CHANGE: PDA Slots
+/mob/living/carbon/human/update_inv_wear_pda()
+	if(client && hud_used)
+		var/obj/screen/inventory/inv = hud_used.inv_slots[SLOT_WEAR_PDA]
+		if(inv)
+			inv.update_icon()
+
+		if(wear_pda)
+			client.screen += wear_pda
+			wear_pda.screen_loc = ui_pda
+// END KEPLER CHANGE
 
 /mob/living/carbon/human/update_inv_pockets()
 	if(client && hud_used)

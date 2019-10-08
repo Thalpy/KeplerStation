@@ -1,5 +1,5 @@
 /obj/screen/human
-	icon = 'icons/mob/screen_midnight.dmi'
+	icon = 'modular_kepler/icons/mob/screen_midnight.dmi'
 
 /obj/screen/human/toggle
 	name = "toggle"
@@ -177,6 +177,16 @@
 	inv_box.slot_id = SLOT_WEAR_ID
 	static_inventory += inv_box
 
+	// KEPLER CHANGE: Add PDA slot
+	inv_box = new /obj/screen/inventory()
+	inv_box.name = "pda"
+	inv_box.icon = ui_style
+	inv_box.icon_state = "pda"
+	inv_box.screen_loc = ui_pda
+	inv_box.slot_id = SLOT_WEAR_PDA
+	static_inventory += inv_box	
+	// END KEPLER CHANGE
+
 	inv_box = new /obj/screen/inventory()
 	inv_box.name = "mask"
 	inv_box.icon = ui_style
@@ -202,7 +212,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage1"
+	inv_box.name = "left pocket"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage1
@@ -210,7 +220,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage2"
+	inv_box.name = "right pocket"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage2
@@ -430,6 +440,9 @@
 			if(H.wear_id)
 				H.wear_id.screen_loc = ui_id
 				screenmob.client.screen += H.wear_id
+			if(H.wear_pda) // KEPLER CHANGE: PDA SLOT
+				H.wear_pda.screen_loc = ui_pda
+				screenmob.client.screen += H.wear_pda
 			if(H.belt)
 				H.belt.screen_loc = ui_belt
 				screenmob.client.screen += H.belt
@@ -447,6 +460,8 @@
 				screenmob.client.screen -= H.s_store
 			if(H.wear_id)
 				screenmob.client.screen -= H.wear_id
+			if(H.wear_pda) // KEPLER CHANGE: PDA SLOT
+				screenmob.client.screen -= H.wear_pda
 			if(H.belt)
 				screenmob.client.screen -= H.belt
 			if(H.back)
