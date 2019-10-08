@@ -177,11 +177,7 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"CURABLE" = CURABLE,
 		"CAN_CARRY"	= CAN_CARRY,
 		"CAN_RESIST" = CAN_RESIST
-<<<<<<< HEAD
 	),
-	))
-=======
-		),
 	"chemical_flags" = list(
 		"REAGENT_DEAD_PROCESS" = REAGENT_DEAD_PROCESS,
 		"REAGENT_DONOTSPLIT" = REAGENT_DONOTSPLIT,
@@ -196,13 +192,4 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"REACTION_CLEAR_IMPURE"  = REACTION_CLEAR_IMPURE,
 		"REACTION_CLEAR_INVERSE" = REACTION_CLEAR_INVERSE
 	    ),
-	"organ_flags" = list(
-		"ORGAN_SYNTHETIC" = ORGAN_SYNTHETIC,
-		"ORGAN_FROZEN" = ORGAN_FROZEN,
-		"ORGAN_FAILING" = ORGAN_FAILING,
-		"ORGAN_EXTERNAL" = ORGAN_EXTERNAL,
-		"ORGAN_VITAL" = ORGAN_VITAL,
-		"ORGAN_NO_SPOIL" = ORGAN_NO_SPOIL
-		),
 		))
->>>>>>> 8aacedaef... Merge pull request #9316 from Thalpy/Reagents_bitflats
