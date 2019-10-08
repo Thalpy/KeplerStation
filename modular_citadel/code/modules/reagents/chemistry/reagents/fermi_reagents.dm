@@ -6,7 +6,10 @@
 	id = "fermi"
 	taste_description	= "affection and love!"
 	can_synth = FALSE
-	SplitChem = TRUE
+	//SplitChem = TRUE
+	impure_chem 			= "fermiTox"// What chemical is metabolised with an inpure reaction
+	inverse_chem_val 		= 0.25		// If the impurity is below 0.5, replace ALL of the chem with inverse_chemupon metabolising
+	inverse_chem			= "fermiTox"
 
 //This should process fermichems to find out how pure they are and what effect to do.
 /datum/reagent/fermi/on_mob_add(mob/living/carbon/M, amount)
@@ -36,7 +39,7 @@
 	taste_description = "like jerky, whiskey and an off aftertaste of a crypt."
 	metabolization_rate = 0.2
 	overdose_threshold = 25
-	DoNotSplit = TRUE
+	chemical_flags = REAGENT_DONOTSPLIT
 	pH = 4
 	can_synth = TRUE
 
@@ -67,6 +70,102 @@
 	W.armor = W.armor.modifyAllRatings(hatArmor)
 	..()
 
+<<<<<<< HEAD
+=======
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//										FURRANIUM
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//OwO whats this?
+//Makes you nya and awoo
+//At a certain amount of time in your system it gives you a fluffy tongue, if pure enough, it's permanent.
+
+/datum/reagent/fermi/furranium
+	name = "Furranium"
+	id = "furranium"
+	description = "OwO whats this?"
+	color = "#f9b9bc" // rgb: , 0, 255
+	taste_description = "dewicious degenyewacy"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	inverse_chem_val 		= 0
+	var/obj/item/organ/tongue/nT
+	chemical_flags = REAGENT_DONOTSPLIT
+	pH = 5
+	var/obj/item/organ/tongue/T
+	can_synth = TRUE
+
+/datum/reagent/fermi/furranium/reaction_mob(mob/living/carbon/human/M, method=INJECT, reac_volume)
+	if(method == INJECT)
+		var/turf/T = get_turf(M)
+		M.adjustOxyLoss(15)
+		M.Knockdown(50)
+		M.Stun(50)
+		M.emote("cough")
+		var/obj/item/toy/plush/P = pick(subtypesof(/obj/item/toy/plush))
+		new P(T)
+		to_chat(M, "<span class='warning'>You feel a lump form in your throat, as you suddenly cough up what seems to be a hairball?</b></span>")
+		var/list/seen = viewers(8, T)
+		for(var/mob/S in seen)
+			to_chat(S, "<span class='warning'>[M] suddenly coughs up a [P.name]!</b></span>")
+		var/T2 = get_random_station_turf()
+		P.throw_at(T2, 8, 1)
+	..()
+
+/datum/reagent/fermi/furranium/on_mob_life(mob/living/carbon/M)
+
+	switch(current_cycle)
+		if(1 to 9)
+			if(prob(20))
+				to_chat(M, "<span class='notice'>Your tongue feels... fluffy</span>")
+		if(10 to 15)
+			if(prob(10))
+				to_chat(M, "You find yourself unable to supress the desire to meow!")
+				M.emote("nya")
+			if(prob(10))
+				to_chat(M, "You find yourself unable to supress the desire to howl!")
+				M.emote("awoo")
+			if(prob(20))
+				var/list/seen = viewers(5, get_turf(M))//Sound and sight checkers
+				for(var/victim in seen)
+					if((istype(victim, /mob/living/simple_animal/pet/)) || (victim == M) || (!isliving(victim)))
+						seen = seen - victim
+				if(LAZYLEN(seen))
+					to_chat(M, "You notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
+		if(16)
+			T = M.getorganslot(ORGAN_SLOT_TONGUE)
+			var/obj/item/organ/tongue/nT = new /obj/item/organ/tongue/fluffy
+			T.Remove(M)
+			nT.Insert(M)
+			T.moveToNullspace()//To valhalla
+			to_chat(M, "<span class='big warning'>Your tongue feels... weally fwuffy!!</span>")
+		if(17 to INFINITY)
+			if(prob(5))
+				to_chat(M, "You find yourself unable to supress the desire to meow!")
+				M.emote("nya")
+			if(prob(5))
+				to_chat(M, "You find yourself unable to supress the desire to howl!")
+				M.emote("awoo")
+			if(prob(5))
+				var/list/seen = viewers(5, get_turf(M))//Sound and sight checkers
+				for(var/victim in seen)
+					if((istype(victim, /mob/living/simple_animal/pet/)) || (victim == M) || (!isliving(victim)))
+						seen = seen - victim
+				if(LAZYLEN(seen))
+					to_chat(M, "You notice [pick(seen)]'s bulge [pick("OwO!", "uwu!")]")
+	..()
+
+/datum/reagent/fermi/furranium/on_mob_delete(mob/living/carbon/M)
+	if(purity < 1)//Only permanent if you're a good chemist.
+		nT = M.getorganslot(ORGAN_SLOT_TONGUE)
+		nT.Remove(M)
+		qdel(nT)
+		T.Insert(M)
+		to_chat(M, "<span class='notice'>You feel your tongue.... unfluffify...?</span>")
+		M.say("Pleh!")
+	else
+		log_game("FERMICHEM: [M] ckey: [M.key]'s tongue has been made permanent")
+
+
+>>>>>>> 8aacedaef... Merge pull request #9316 from Thalpy/Reagents_bitflats
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //Nanite removal
 //Writen by Trilby!! Embellsished a little by me.
@@ -77,9 +176,9 @@
 	description = "A stablised EMP that is highly volatile, shocking small nano machines that will kill them off at a rapid rate in a patient's system."
 	color = "#708f8f"
 	overdose_threshold = 15
-	ImpureChem 			= "nanite_b_goneTox" //If you make an inpure chem, it stalls growth
-	InverseChemVal 		= 0.25
-	InverseChem 		= "nanite_b_goneTox" //At really impure vols, it just becomes 100% inverse
+	impure_chem 			= "nanite_b_goneTox" //If you make an inpure chem, it stalls growth
+	inverse_chem_val 		= 0.25
+	inverse_chem		= "nanite_b_goneTox" //At really impure vols, it just becomes 100% inverse
 	taste_description = "what can only be described as licking a battery."
 	pH = 9
 	can_synth = FALSE
@@ -102,7 +201,7 @@
 		//empulse((get_turf(C)), 3, 2)//So the nanites randomize
 		var/atom/T = C
 		T.emp_act(EMP_HEAVY)
-		to_chat(C, "<span class='warning'>The nanites short circuit within your system!</b></span>")
+		to_chat(C, "<span class='warning'>You feel a strange tingling sensation come from your core.</b></span>")
 	if(isnull(N))
 		return ..()
 	N.nanite_volume = -2
@@ -112,10 +211,11 @@
 	O.emp_act(EMP_HEAVY)
 
 /datum/reagent/fermi/nanite_b_goneTox
-	name = "Naninte bain"
+	name = "Electromagnetic crystals"
 	id = "nanite_b_goneTox"
-	description = "Poorly made, and shocks you!"
-	metabolization_rate = 1
+	description = "Causes items upon the patient to sometimes short out, as well as causing a shock in the patient, if the residual charge between the crystals builds up to sufficient quantities"
+	metabolization_rate = 0.5
+	chemical_flags = REAGENT_INVISIBLE
 
 //Increases shock events.
 /datum/reagent/fermi/nanite_b_goneTox/on_mob_life(mob/living/carbon/C)//Damages the taker if their purity is low. Extended use of impure chemicals will make the original die. (thus can't be spammed unless you've very good)
@@ -181,7 +281,7 @@
 	name = "Fermis Test Reagent"
 	id = "fermiTest"
 	description = "You should be really careful with this...! Also, how did you get this?"
-	addProc = TRUE
+	chemical_flags = REAGENT_FORCEONNEW
 	can_synth = FALSE
 
 /datum/reagent/fermi/fermiTest/on_new(datum/reagents/holder)
@@ -211,22 +311,6 @@
 		to_chat(M, "<span class='danger'>The solution reacts dramatically, with a meow!</span>")
 		playsound(get_turf(M), 'modular_citadel/sound/voice/merowr.ogg', 50, 1)
 	holder.clear_reagents()
-
-/datum/reagent/fermi/fermiTox
-	name = "FermiTox"
-	id = "fermiTox"
-	description = "You should be really careful with this...! Also, how did you get this? You shouldn't have this!"
-	data = "merge"
-	color = "FFFFFF"
-	can_synth = FALSE
-
-//I'm concerned this is too weak, but I also don't want deathmixes.
-/datum/reagent/fermi/fermiTox/on_mob_life(mob/living/carbon/C, method)
-	if(C.dna && istype(C.dna.species, /datum/species/jelly))
-		C.adjustToxLoss(-2)
-	else
-		C.adjustToxLoss(2)
-	..()
 
 /datum/reagent/fermi/acidic_buffer
 	name = "Acidic buffer"
