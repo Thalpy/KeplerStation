@@ -1,0 +1,4 @@
+author: "KeplerStation-Bot"
+delete-after: True
+changes: 
+  - bugfix: "non-alphanumeric graffiti decals will no longer display as \"letter\"."
