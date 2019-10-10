@@ -66,6 +66,12 @@ GLOBAL_VAR_INIT(war_declared, FALSE)
   GLOB.war_declared = TRUE
 	var/list/nukeops = get_antag_minds(/datum/antagonist/nukeop)
 	var/actual_players = GLOB.joined_player_list.len - nukeops.len
+<<<<<<< HEAD
+=======
+	var/tc_malus = 0
+	if(actual_players < CHALLENGE_PLAYERS_TARGET)
+		tc_malus = FLOOR(((CHALLENGE_TELECRYSTALS / CHALLENGE_PLAYERS_TARGET) * (CHALLENGE_PLAYERS_TARGET - actual_players)) * TELECRYSTALS_MALUS_SCALING, 1)
+>>>>>>> ae843435f... Merge pull request #9460 from Ghommie/Ghommie-cit230
 
 	new uplink_type(get_turf(user), user.key, CHALLENGE_TELECRYSTALS + CEILING(PLAYER_SCALING * actual_players, 1))
 
