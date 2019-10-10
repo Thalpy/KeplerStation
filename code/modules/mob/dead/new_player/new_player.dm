@@ -72,7 +72,7 @@
 			qdel(query_get_new_polls)
 			if(QDELETED(src))
 				return
-
+				
 	if(GLOB.server_tos)		
 		output += "<p><a href='byond://?src=[REF(src)];tos=1'>Terms of Service</A></p>"		
 
@@ -324,7 +324,7 @@
 	else
 		to_chat(src, "<span class='notice'>Teleporting failed. Ahelp an admin please</span>")
 		stack_trace("There's no freaking observer landmark available on this map or you're making observers before the map is initialised")
-	observer.key = key
+	transfer_ckey(observer, FALSE)
 	observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)
