@@ -23,12 +23,8 @@
 	if(ishuman(M))
 		H = M
 	socks = H ? H.socks : random_socks()
-	socks_color = H ? H.socks_color : random_color()
 	undershirt = H ? H.undershirt : random_undershirt(M.gender)
-	shirt_color = H ? H.shirt_color : random_color()
 	underwear = H ? H.underwear : random_underwear(M.gender)
-	undie_color = H ? H.undie_color : random_color()
-	give_genitals(TRUE)
 	if(outfit)
 		var/datum/outfit/O = new outfit()
 		O.equip(src)

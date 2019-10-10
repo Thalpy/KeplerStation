@@ -86,13 +86,8 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 				candies = shuffle(candies)//Shake those ghosts up!
 				for(var/mob/dead/observer/C2 in candies)
 					if(C2.key && C2)
-<<<<<<< HEAD
-						SM.key = C2.key
-						message_admins("Ghost candidate found! [C2] key [C2.key] is becoming a clone of [M] key: [M.key] (They agreed to respect the character they're becoming)")
-=======
 						C2.transfer_ckey(SM, FALSE)
-						message_admins("Ghost candidate found! [C2] key [C2.key] is becoming a clone of [M] key: [M.key] (They agreed to respect the character they're becoming, and agreed to not ERP without express permission from the original.)")
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
+						message_admins("Ghost candidate found! [C2] key [C2.key] is becoming a clone of [M] key: [M.key] (They agreed to respect the character they're becoming)")
 						log_game("FERMICHEM: [M] ckey: [M.key] is creating a clone, controlled by [C2]")
 						break
 					else

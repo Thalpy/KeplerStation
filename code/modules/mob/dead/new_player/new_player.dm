@@ -72,13 +72,10 @@
 			qdel(query_get_new_polls)
 			if(QDELETED(src))
 				return
-
-<<<<<<< HEAD
+				
 	if(GLOB.server_tos)		
 		output += "<p><a href='byond://?src=[REF(src)];tos=1'>Terms of Service</A></p>"		
 
-=======
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 	output += "</center>"
 
 	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
@@ -103,7 +100,6 @@
 	else
 		relevant_cap = max(hpc, epc)
 
-<<<<<<< HEAD
 		// KEPLER CHANGE: Add in TOS code		
 	if(href_list["consent_signed"])		
 		var/sqltime = time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")		
@@ -126,19 +122,14 @@
 	// END KEPLER CHANGE
 	
 
-=======
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
 		return 1
 
 	if(href_list["ready"])
-<<<<<<< HEAD
 		if(!tos_consent)		
 			to_chat(usr, "<span class='warning'>You must consent to the terms of service before you can join!</span>")		
 			return 0
-=======
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 		var/tready = text2num(href_list["ready"])
 		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
 		//This is likely not an actual issue but I don't have time to prove that this
@@ -156,13 +147,10 @@
 		new_player_panel()
 
 	if(href_list["late_join"])
-<<<<<<< HEAD
 		if(!tos_consent)		
 			to_chat(usr, "<span class='warning'>You must consent to the terms of service before you can join!</span>")		
 			return 0
 			
-=======
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 		if(!SSticker || !SSticker.IsRoundInProgress())
 			to_chat(usr, "<span class='danger'>The round is either not ready, or has already finished...</span>")
 			return
@@ -309,12 +297,9 @@
 
 //When you cop out of the round (NB: this HAS A SLEEP FOR PLAYER INPUT IN IT)
 /mob/dead/new_player/proc/make_me_an_observer()
-<<<<<<< HEAD
 	if(!tos_consent)		
 		to_chat(usr, "<span class='warning'>You must consent to the terms of service before you can join!</span>")		
 		return 0
-=======
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 	if(QDELETED(src) || !src.client)
 		ready = PLAYER_NOT_READY
 		return FALSE
@@ -339,11 +324,7 @@
 	else
 		to_chat(src, "<span class='notice'>Teleporting failed. Ahelp an admin please</span>")
 		stack_trace("There's no freaking observer landmark available on this map or you're making observers before the map is initialised")
-<<<<<<< HEAD
-	observer.key = key
-=======
 	transfer_ckey(observer, FALSE)
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 	observer.client = client
 	observer.set_ghost_appearance()
 	if(observer.client && observer.client.prefs)

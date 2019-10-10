@@ -157,34 +157,6 @@
 	for(var/obj/effect/landmark/vr_spawn/V in GLOB.landmarks_list)
 		GLOB.vr_spawnpoints[V.vr_category] = V
 
-<<<<<<< HEAD
-/obj/machinery/vr_sleeper/proc/build_virtual_human(mob/living/carbon/human/H, location, var/datum/outfit/outfit, transfer = TRUE)
-	if(H)
-		cleanup_vr_human()
-		vr_human = new /mob/living/carbon/human/virtual_reality(location)
-		vr_human.mind_initialize()
-		vr_human.vr_sleeper = src
-		vr_human.real_mind = H.mind
-		H.dna.transfer_identity(vr_human)
-		vr_human.name = H.name
-		vr_human.real_name = H.real_name
-		vr_human.socks = H.socks
-		vr_human.undershirt = H.undershirt
-		vr_human.underwear = H.underwear
-		vr_human.updateappearance(TRUE, TRUE, TRUE)
-		if(outfit)
-			var/datum/outfit/O = new outfit()
-			O.equip(vr_human)
-		if(transfer && H.mind)
-			SStgui.close_user_uis(H, src)
-			H.audiovisual_redirect = vr_human
-			vr_human.ckey = H.ckey
-
-/obj/machinery/vr_sleeper/proc/cleanup_vr_human()
-	if(vr_human)
-		vr_human.vr_sleeper = null // Prevents race condition where a new human could get created out of order and set to null.
-		QDEL_NULL(vr_human)
-=======
 /obj/machinery/vr_sleeper/proc/new_player(mob/living/carbon/human/H, location, datum/outfit/outfit, transfer = TRUE)
 	if(!H)
 		return
@@ -200,7 +172,6 @@
 /obj/machinery/vr_sleeper/proc/cleanup_vr_mob()
 	if(vr_mob)
 		QDEL_NULL(vr_mob)
->>>>>>> f686ea75d... Merge pull request #8615 from Ghommie/Ghommie-cit45
 
 /obj/machinery/vr_sleeper/proc/emagNotify()
 	if(vr_mob)
