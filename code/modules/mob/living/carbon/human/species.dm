@@ -8,9 +8,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/name	// this is the fluff name. these will be left generic (such as 'Lizardperson' for the lizard race) so servers can change them to whatever
 	var/default_color = "#FFF"	// if alien colors are disabled, this is the color that will be used by that race
 
-	var/sexes = 1		// whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
+	var/sexes = 1 // whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 
-	var/list/offset_features = list(OFFSET_UNIFORM = list(0,0), OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0), OFFSET_GLASSES = list(0,0), OFFSET_EARS = list(0,0), OFFSET_SHOES = list(0,0), OFFSET_S_STORE = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), OFFSET_SUIT = list(0,0), OFFSET_NECK = list(0,0))
+	//Species Icon Drawing Offsets - Pixel X, Pixel Y, Aka X = Horizontal and Y = Vertical, from bottom left corner
+	var/list/offset_features = list(
+		OFFSET_UNIFORM = list(0,0), 
+		OFFSET_ID = list(0,0), 
+		OFFSET_GLOVES = list(0,0), 
+		OFFSET_GLASSES = list(0,0), 
+		OFFSET_EARS = list(0,0), 
+		OFFSET_SHOES = list(0,0), 
+		OFFSET_S_STORE = list(0,0), 
+		OFFSET_FACEMASK = list(0,0), 
+		OFFSET_HEAD = list(0,0), 
+		OFFSET_EYES = list(0,0), 
+		OFFSET_LIPS = list(0,0), 
+		OFFSET_BELT = list(0,0), 
+		OFFSET_BACK = list(0,0), 
+		OFFSET_HAIR = list(0,0),
+		OFFSET_FHAIR = list(0,0),
+		OFFSET_SUIT = list(0,0),
+		OFFSET_NECK = list(0,0),
+		OFFSET_MUTPARTS = list(0,0)
+		)
 
 	var/hair_color	// this allows races to have specific hair colors... if null, it uses the H's hair/facial hair colors. if "mutcolor", it uses the H's mutant_color
 	var/hair_alpha = 255	// the alpha used by the hair. 255 is completely solid, 0 is transparent.
@@ -374,6 +394,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			facial_overlay.alpha = hair_alpha
 
+			if(OFFSET_FHAIR in H.dna.species.offset_features)
+				facial_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FHAIR][1] 
+				facial_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FHAIR][2] 
+
 			standing += facial_overlay
 
 	if(H.head)
@@ -431,9 +455,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				else
 					hair_overlay.color = forced_colour
 				hair_overlay.alpha = hair_alpha
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+
+				if(OFFSET_HAIR in H.dna.species.offset_features)
+					hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HAIR][1]
+					hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HAIR][2]
+
 		if(hair_overlay.icon)
 			standing += hair_overlay
 
@@ -454,9 +480,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.lip_style && (LIPS in species_traits))
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/human_face.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+
+			if(OFFSET_LIPS in H.dna.species.offset_features)
+				lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_LIPS][1]
+				lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_LIPS][2]
+
 			standing += lip_overlay
 
 		// eyes
@@ -469,9 +497,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				eye_overlay = mutable_appearance('icons/mob/human_face.dmi', "eyes", -BODY_LAYER)
 			if((EYECOLOR in species_traits) && has_eyes)
 				eye_overlay.color = "#" + H.eye_color
-			if(OFFSET_FACE in H.dna.species.offset_features)
-				eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-				eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+
+			if(OFFSET_EYES in H.dna.species.offset_features)
+				eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_EYES][1]
+				eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_EYES][2]
+
 			standing += eye_overlay
 
 	//Underwear, Undershirts & Socks
@@ -676,6 +706,28 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							accessory_overlay.color = "#[H.eye_color]"
 				else
 					accessory_overlay.color = forced_colour
+<<<<<<< HEAD
+=======
+			else
+				if(bodypart == "ears")
+					accessory_overlay.icon_state = "m_ears_none_[layertext]"
+				if(bodypart == "tail")
+					accessory_overlay.icon_state = "m_tail_husk_[layertext]"
+				if(MATRIXED)
+					var/list/husklist = list()
+					husklist += ReadRGB("#a3a3a3")
+					husklist += ReadRGB("#a3a3a3")
+					husklist += ReadRGB("#a3a3a3")
+					husklist += list(0,0,0, hair_alpha)
+					for(var/index=1, index<=husklist.len, index++)
+						husklist[index] = husklist[index]/255
+					accessory_overlay.color = husklist
+
+			if(OFFSET_MUTPARTS in H.dna.species.offset_features)
+				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
+				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+
+>>>>>>> e71727212... Merge pull request #9450 from JTGSZ/offsets4stuff
 			standing += accessory_overlay
 
 			if(S.hasinner)
@@ -688,8 +740,100 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(S.center)
 					inner_accessory_overlay = center_image(inner_accessory_overlay, S.dimension_x, S.dimension_y)
 
+				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
+					inner_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
+					inner_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+
 				standing += inner_accessory_overlay
 
+<<<<<<< HEAD
+=======
+			if(S.extra) //apply the extra overlay, if there is one
+				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+				if(S.gender_specific)
+					extra_accessory_overlay.icon_state = "[g]_[bodypart]_extra_[S.icon_state]_[layertext]"
+				else
+					extra_accessory_overlay.icon_state = "m_[bodypart]_extra_[S.icon_state]_[layertext]"
+				if(S.center)
+					extra_accessory_overlay = center_image(extra_accessory_overlay, S.dimension_x, S.dimension_y)
+
+
+				switch(S.extra_color_src) //change the color of the extra overlay
+					if(MUTCOLORS)
+						if(fixed_mut_color)
+							extra_accessory_overlay.color = "#[fixed_mut_color]"
+						else
+							extra_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+					if(MUTCOLORS2)
+						if(fixed_mut_color2)
+							extra_accessory_overlay.color = "#[fixed_mut_color2]"
+						else
+							extra_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
+					if(MUTCOLORS3)
+						if(fixed_mut_color3)
+							extra_accessory_overlay.color = "#[fixed_mut_color3]"
+						else
+							extra_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
+					if(HAIR)
+						if(hair_color == "mutcolor")
+							extra_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
+						else
+							extra_accessory_overlay.color = "#[H.hair_color]"
+					if(FACEHAIR)
+						extra_accessory_overlay.color = "#[H.facial_hair_color]"
+					if(EYECOLOR)
+						extra_accessory_overlay.color = "#[H.eye_color]"
+
+					if(HORNCOLOR)
+						extra_accessory_overlay.color = "#[H.horn_color]"
+			
+				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
+					extra_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
+					extra_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+			
+				standing += extra_accessory_overlay
+
+			if(S.extra2) //apply the extra overlay, if there is one
+				var/mutable_appearance/extra2_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
+				if(S.gender_specific)
+					extra2_accessory_overlay.icon_state = "[g]_[bodypart]_extra2_[S.icon_state]_[layertext]"
+				else
+					extra2_accessory_overlay.icon_state = "m_[bodypart]_extra2_[S.icon_state]_[layertext]"
+				if(S.center)
+					extra2_accessory_overlay = center_image(extra2_accessory_overlay, S.dimension_x, S.dimension_y)
+
+				switch(S.extra2_color_src) //change the color of the extra overlay
+					if(MUTCOLORS)
+						if(fixed_mut_color)
+							extra2_accessory_overlay.color = "#[fixed_mut_color]"
+						else
+							extra2_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+					if(MUTCOLORS2)
+						if(fixed_mut_color2)
+							extra2_accessory_overlay.color = "#[fixed_mut_color2]"
+						else
+							extra2_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
+					if(MUTCOLORS3)
+						if(fixed_mut_color3)
+							extra2_accessory_overlay.color = "#[fixed_mut_color3]"
+						else
+							extra2_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
+					if(HAIR)
+						if(hair_color == "mutcolor3")
+							extra2_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
+						else
+							extra2_accessory_overlay.color = "#[H.hair_color]"
+					if(HORNCOLOR)
+						extra2_accessory_overlay.color = "#[H.horn_color]"
+
+				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
+					extra2_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
+					extra2_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
+
+				standing += extra2_accessory_overlay
+
+
+>>>>>>> e71727212... Merge pull request #9450 from JTGSZ/offsets4stuff
 		H.overlays_standing[layer] = standing.Copy()
 		standing = list()
 
