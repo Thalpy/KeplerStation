@@ -706,28 +706,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 							accessory_overlay.color = "#[H.eye_color]"
 				else
 					accessory_overlay.color = forced_colour
-<<<<<<< HEAD
-=======
-			else
-				if(bodypart == "ears")
-					accessory_overlay.icon_state = "m_ears_none_[layertext]"
-				if(bodypart == "tail")
-					accessory_overlay.icon_state = "m_tail_husk_[layertext]"
-				if(MATRIXED)
-					var/list/husklist = list()
-					husklist += ReadRGB("#a3a3a3")
-					husklist += ReadRGB("#a3a3a3")
-					husklist += ReadRGB("#a3a3a3")
-					husklist += list(0,0,0, hair_alpha)
-					for(var/index=1, index<=husklist.len, index++)
-						husklist[index] = husklist[index]/255
-					accessory_overlay.color = husklist
-
-			if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-				accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
-				accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-
->>>>>>> e71727212... Merge pull request #9450 from JTGSZ/offsets4stuff
 			standing += accessory_overlay
 
 			if(S.hasinner)
@@ -746,94 +724,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 				standing += inner_accessory_overlay
 
-<<<<<<< HEAD
-=======
-			if(S.extra) //apply the extra overlay, if there is one
-				var/mutable_appearance/extra_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
-				if(S.gender_specific)
-					extra_accessory_overlay.icon_state = "[g]_[bodypart]_extra_[S.icon_state]_[layertext]"
-				else
-					extra_accessory_overlay.icon_state = "m_[bodypart]_extra_[S.icon_state]_[layertext]"
-				if(S.center)
-					extra_accessory_overlay = center_image(extra_accessory_overlay, S.dimension_x, S.dimension_y)
-
-
-				switch(S.extra_color_src) //change the color of the extra overlay
-					if(MUTCOLORS)
-						if(fixed_mut_color)
-							extra_accessory_overlay.color = "#[fixed_mut_color]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
-					if(MUTCOLORS2)
-						if(fixed_mut_color2)
-							extra_accessory_overlay.color = "#[fixed_mut_color2]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
-					if(MUTCOLORS3)
-						if(fixed_mut_color3)
-							extra_accessory_overlay.color = "#[fixed_mut_color3]"
-						else
-							extra_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
-					if(HAIR)
-						if(hair_color == "mutcolor")
-							extra_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
-						else
-							extra_accessory_overlay.color = "#[H.hair_color]"
-					if(FACEHAIR)
-						extra_accessory_overlay.color = "#[H.facial_hair_color]"
-					if(EYECOLOR)
-						extra_accessory_overlay.color = "#[H.eye_color]"
-
-					if(HORNCOLOR)
-						extra_accessory_overlay.color = "#[H.horn_color]"
-			
-				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-					extra_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
-					extra_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-			
-				standing += extra_accessory_overlay
-
-			if(S.extra2) //apply the extra overlay, if there is one
-				var/mutable_appearance/extra2_accessory_overlay = mutable_appearance(S.icon, layer = -layer)
-				if(S.gender_specific)
-					extra2_accessory_overlay.icon_state = "[g]_[bodypart]_extra2_[S.icon_state]_[layertext]"
-				else
-					extra2_accessory_overlay.icon_state = "m_[bodypart]_extra2_[S.icon_state]_[layertext]"
-				if(S.center)
-					extra2_accessory_overlay = center_image(extra2_accessory_overlay, S.dimension_x, S.dimension_y)
-
-				switch(S.extra2_color_src) //change the color of the extra overlay
-					if(MUTCOLORS)
-						if(fixed_mut_color)
-							extra2_accessory_overlay.color = "#[fixed_mut_color]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
-					if(MUTCOLORS2)
-						if(fixed_mut_color2)
-							extra2_accessory_overlay.color = "#[fixed_mut_color2]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features["mcolor2"]]"
-					if(MUTCOLORS3)
-						if(fixed_mut_color3)
-							extra2_accessory_overlay.color = "#[fixed_mut_color3]"
-						else
-							extra2_accessory_overlay.color = "#[H.dna.features["mcolor3"]]"
-					if(HAIR)
-						if(hair_color == "mutcolor3")
-							extra2_accessory_overlay.color = "#[H.dna.features["mcolor"]]"
-						else
-							extra2_accessory_overlay.color = "#[H.hair_color]"
-					if(HORNCOLOR)
-						extra2_accessory_overlay.color = "#[H.horn_color]"
-
-				if(OFFSET_MUTPARTS in H.dna.species.offset_features)
-					extra2_accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_MUTPARTS][1] 
-					extra2_accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_MUTPARTS][2]
-
-				standing += extra2_accessory_overlay
-
-
->>>>>>> e71727212... Merge pull request #9450 from JTGSZ/offsets4stuff
 		H.overlays_standing[layer] = standing.Copy()
 		standing = list()
 
