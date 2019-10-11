@@ -19,7 +19,11 @@
 	return 0
 
 
+<<<<<<< HEAD
 /mob/living/simple_animal/drone/can_equip(obj/item/I, slot, disable_warning = 0)
+=======
+/mob/living/simple_animal/drone/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+>>>>>>> 1896b43c7... Merge pull request #9451 from Ghommie/Ghommie-cit224
 	switch(slot)
 		if(SLOT_HEAD)
 			if(head)
