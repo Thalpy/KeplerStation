@@ -67,9 +67,7 @@
 	id = "synthflesh"
 	results = list("synthflesh" = 3)
 	required_reagents = list("blood" = 1, "carbon" = 1, "styptic_powder" = 1)
-
-<<<<<<< HEAD
-=======
+	
 /datum/chemical_reaction/synthtissue
 	name = "Synthtissue"
 	id = "synthtissue"
@@ -106,7 +104,6 @@
 	N.volume -= 0.002
 	St.data["grown_volume"] = St.data["grown_volume"] + added_volume
 
->>>>>>> 2e74833e7... Merge pull request #9444 from Thalpy/Updates-holder
 /datum/chemical_reaction/styptic_powder
 	name = "Styptic Powder"
 	id = "styptic_powder"
