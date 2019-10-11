@@ -552,16 +552,11 @@
 	if (multiplier == 0)//clarity
 		fermiEnd()
 		return
-<<<<<<< HEAD
-	for(var/P in cached_results)
-		targetVol = cached_results[P]*multiplier
-=======
 
 	for(var/P in C.required_catalysts)
 		if(!has_reagent(P))
 			fermiEnd()
 			return
->>>>>>> 2e74833e7... Merge pull request #9444 from Thalpy/Updates-holder
 
 	if (!fermiIsReacting)
 		CRASH("Fermi has refused to stop reacting even though we asked her nicely.")
