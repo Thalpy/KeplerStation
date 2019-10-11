@@ -73,7 +73,7 @@
 				else
 					return FALSE
 
-	forceMove(target)
+	moveToNullspace()
 	imp_in = target
 	target.implants += src
 	if(activated)
@@ -90,7 +90,6 @@
 	return TRUE
 
 /obj/item/implant/proc/removed(mob/living/source, silent = FALSE, special = 0)
-	moveToNullspace()
 	imp_in = null
 	source.implants -= src
 	for(var/X in actions)

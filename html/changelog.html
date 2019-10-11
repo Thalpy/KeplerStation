@@ -55,6 +55,90 @@
 		
 		-->
 		<div class="commit sansserif">
+			<h2 class="date">11 October 2019</h2>
+			<h3 class="author">Bhijn updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">The server no longer attempts to check if the CID matches the IP of any bans, or if the IP matches any CIDs of any active bans, during client analyzation</li>
+			</ul>
+			<h3 class="author">Fermis updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">fixes reaction mechanics at low volumes</li>
+				<li class="bugfix">stops reactions constantly bubbling on the edge of reaction temperature</li>
+				<li class="bugfix">stops small amount reactions from occurring, and prevents disappearing tiny numbers</li>
+				<li class="tweak">Reduced minimum reaction volume from 1 to 0.01</li>
+				<li class="refactor">cleaned up Fermichem</li>
+			</ul>
+			<h3 class="author">Ghommie (original PR by ShizCalev) updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">As a non-human mob, hovering your cursor over an inventory slot while holding an object in your active hand shouldn't runtime now.</li>
+			</ul>
+			<h3 class="author">JTGSZ updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Optional species based clothing restrictions</li>
+				<li class="rscadd">Adds more control over species based offsets.</li>
+			</ul>
+			<h3 class="author">KeplerStation-Bot updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="balance">Nerfs cyborg disabler and its internal power cell to hold 25 disabler beam shots rather than 43/44, just like a normal disabler.</li>
+				<li class="bugfix">You can now make plasmaglass tables again.</li>
+				<li class="tweak">chainsaw kind of weapons and the mecha drill and the CLAMP can now be used with 100% accuracy for surgery</li>
+				<li class="refactor">surgery tools now work on defines</li>
+				<li class="balance">advanced surgerytools can now switch types instead of  just being faster</li>
+				<li class="bugfix">having one of your hands used up if you fireman carry but the person being carried dismounts any way other than you dropping them</li>
+				<li class="rscadd">hugbox (/s)</li>
+				<li class="tweak">ashwalker spawn text now tells them "i" "c" not to leave lavaland</li>
+			</ul>
+			<h3 class="author">YakumoChen updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Jetpacks no longer last twice as long between air refills.</li>
+			</ul>
+			<h3 class="author">original by Bumtickley00, port by sishen1542 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Suit storage units will now also remove radiation from mobs.</li>
+			</ul>
+			<h3 class="author">original by: WJohnston, Antur, Arcane, plapatin, sprites by cogwerks and edited by mrdoombringer. port by sishen1542 updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">THE GOOSE IS LOOSE</li>
+			</ul>
+
+			<h2 class="date">10 October 2019</h2>
+			<h3 class="author">Fermi updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">fixed an angery PR</li>
+			</ul>
+			<h3 class="author">Ghommie (original PR by AnturK) updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="bugfix">Supermatter now melt walls if it finds itself in one.</li>
+			</ul>
+			<h3 class="author">JTGSZ updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="tweak">Gang Dominator excessive wall check tweaked to 25 open turfs</li>
+				<li class="bugfix">Gang Dominator no longer functions off-station.</li>
+			</ul>
+			<h3 class="author">KeplerStation-Bot updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="refactor">Refactored implants to not be located inside mobs codewise, akin to organs.</li>
+				<li class="bugfix">Fixed gps tracking implants.</li>
+				<li class="bugfix">Fixed item not being dumped out of storage implants onto the owner's turf upon removal.</li>
+				<li class="rscadd">Reebe QoL aka creep in gear</li>
+				<li class="bugfix">???</li>
+				<li class="server">HEY MADE THE REEBEEE WAY SMALLER - Making it less lagging hopefully</li>
+				<li class="tweak">Bottles in PanD.E.M.I.C 2200 can now be replaced with an inhand bottle directly</li>
+				<li class="tweak">Ejecting a bottle from the PanD.E.M.I.C 2200 puts it directly into the user's hand</li>
+				<li class="tweak">Alt-clicking the PanD.E.M.I.C 2200 ejects the current bottle</li>
+				<li class="bugfix">teleporting a locker is bad</li>
+				<li class="bugfix">non-alphanumeric graffiti decals will no longer display as "letter".</li>
+				<li class="refactor">turned virtual reality into a component datum, which is then applied to spawned virtual mobs. This fixes mob transformations (such as wabbajack and monkeyizing) breaking the previously hardcoded behaviour and trapping you in VR, also enabling a more concrete virtual reality inception experience.</li>
+				<li class="tweak">made the autoprocess button relevant</li>
+				<li class="tweak">changes so that spooktober starts earlier</li>
+				<li class="bugfix">fixed the dark blue lum major effect</li>
+			</ul>
+			<h3 class="author">TerraGS / Skoglol updated:</h3>
+			<ul class="changes bgimages16">
+				<li class="rscadd">Adds toggleable light and blinking charge indicator to kinetic crusher</li>
+				<li class="rscadd">Kinetic crusher can now be one-hand carried. You'll still need two hand to use it.</li>
+			</ul>
+
 			<h2 class="date">08 October 2019</h2>
 			<h3 class="author">Chayse updated:</h3>
 			<ul class="changes bgimages16">
@@ -727,47 +811,6 @@
 				<li class="tweak">Teleporter calibration actually matters to all roundstart players</li>
 				<li class="balance">Slows down teleportation with the console/hub/teleporter setup if you care for your species.</li>
 				<li class="balance">Dedicated non-humans can now get hulk without having to become human.</li>
-			</ul>
-
-			<h2 class="date">09 August 2019</h2>
-			<h3 class="author">BurgerBB updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Central Command informs you when a Meteor Storm is about to hit 5 to 10 minutes before it happens.</li>
-			</ul>
-
-			<h2 class="date">08 August 2019</h2>
-			<h3 class="author">KeplerStation-Bot updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">The femur breaker now uses `*scream` instead of forced speech. This means that the femur breaker will no longer spam deadchat with "AAAAAAAAAHHHHHHHHHH!!"</li>
-				<li class="tweak">The femur breaker will now guarantee that the victim falls into crit, which will make it harder to perform torture scenes with it since the victim can just succumb.</li>
-				<li class="bugfix">Fixes clock cult Abscond scripture not dragging pulled mobs into Reebe. Also fixes blood cult tele runes teleporting you from the source turf to the source turf.</li>
-			</ul>
-			<h3 class="author">Yakumo Chen updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">Autocloning now requires tier 4 parts</li>
-			</ul>
-
-			<h2 class="date">07 August 2019</h2>
-			<h3 class="author">AffecredArc07 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="code_imp">Made a very minor code tweak</li>
-			</ul>
-			<h3 class="author">AffectedArc07 updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="bugfix">FINALLY made advanced parsing work</li>
-				<li class="bugfix">Megafauna gib again</li>
-				<li class="bugfix">Fixed a bug in TOS code</li>
-			</ul>
-			<h3 class="author">Ghommie (by nemvar) updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="tweak">Dwarfs are now more robust.</li>
-			</ul>
-			<h3 class="author">KeplerStation-Bot updated:</h3>
-			<ul class="changes bgimages16">
-				<li class="balance">As all things are not</li>
-				<li class="rscadd">reworked ninja's stealth mode. Increased invisibility, but engaging in combat, attacking or throwing things, bumping people will temporarily lower it.</li>
-				<li class="rscadd">Ninja shoes are even stealthier.</li>
-				<li class="code_imp">cleaned up some 2014 tier processing code horror.</li>
 			</ul>
 		</div>
 
